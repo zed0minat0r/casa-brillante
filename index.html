@@ -107,6 +107,23 @@ section{padding:6rem 0;position:relative}
 .splash .sh.t{top:0;transform:translateY(-100%)}
 .splash .sh.b{bottom:0;transform:translateY(100%)}
 .splash.go{display:none}
+/* ── THE ENTRANCE ────────────────────────────────────────────────────────────────────────────
+   The site used to arrive the instant the splash was removed, which reads as a pop. Now the
+   shutters close to paper, the splash DISSOLVES off that paper, and the first screen rises into
+   it in sequence - so one paper surface stays on screen the whole way through and nothing
+   appears from nowhere. `pre` is set from JS, never in the markup: if the script fails the page
+   must still be readable rather than permanently invisible. */
+.splash.fade{opacity:0;transition:opacity .62s ease}
+body.pre .nav,body.pre .hero>.wrap>*,body.pre .ticker{opacity:0;transform:translateY(22px)}
+body.entered .nav,body.entered .hero>.wrap>*,body.entered .ticker{opacity:1;transform:none;
+  transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1)}
+body.entered .nav{transition-delay:.04s}
+body.entered .hero>.wrap>*:nth-child(1){transition-delay:.15s}
+body.entered .hero>.wrap>*:nth-child(2){transition-delay:.24s}
+body.entered .hero>.wrap>*:nth-child(3){transition-delay:.33s}
+body.entered .hero>.wrap>*:nth-child(4){transition-delay:.42s}
+body.entered .hero>.wrap>*:nth-child(5){transition-delay:.50s}
+body.entered .ticker{transition-delay:.60s}
 .splash.out{pointer-events:none}
 .splash.out .sh.t,.splash.out .sh.b{transform:translateY(0)}
 .splash.out .sin{opacity:0;transform:translateY(-10px);transition:opacity .42s,transform .42s}
@@ -209,18 +226,8 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 /* ── GALLERY, asymmetric on purpose ── */
 /* the tall frame sets the row height and the two on the right split it, so there is no gap
    left over at the bottom of the short column - which is what an auto row height gives you */
-.gal{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:1rem;height:min(76vh,760px);width:min(1180px,100%);margin:0 auto}
-.gal figure{margin:0;position:relative;overflow:hidden;border-radius:3px;min-height:0}
-.gal figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;pointer-events:none;
-  background:linear-gradient(180deg,transparent,rgba(21,21,15,.55))}
-.gal img{width:100%;height:100%;object-fit:cover}
-.gal .tall{grid-row:span 2}
-.gal figcaption{position:absolute;z-index:2;left:.9rem;bottom:.8rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#fff}
-@media(max-width:759px){.gal{grid-template-columns:1fr;grid-template-rows:none;height:auto}.gal figure{grid-row:auto;aspect-ratio:4/3}}
 
 /* ── QUOTE ── */
-.zonas{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;max-width:720px;margin:0 auto}
-.zonas span{border:1px solid var(--line-2);border-radius:999px;padding:.5rem 1.1rem;font-size:.92rem;color:var(--ink-2)}
 .pull{font-family:var(--display);font-size:clamp(1.7rem,4.2vw,2.7rem);line-height:1.22;text-align:center;letter-spacing:-.018em}
 .pull i{color:var(--clay)}
 .attrib{text-align:center;margin-top:1.4rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
@@ -253,6 +260,8 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 .rv.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
+  body.pre .nav,body.pre .hero>.wrap>*,body.pre .ticker{opacity:1;transform:none}
+  .splash .bg{animation:none}
   .ticker .run{animation:none}
   .sin>*,.sin .rule-draw{animation:none!important;opacity:1;width:170px}
 }
@@ -281,7 +290,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     <a class="mark" href="#inicio">Noymi <i>House Cleaning</i></a>
     <div class="links">
       <a href="#servicios">Servicios</a><a href="#antes">Antes y después</a><a href="#precios">Precios</a>
-      <a href="#noymi">Quién soy</a><a href="#zonas">Zonas</a><a href="#preguntas">Preguntas</a>
+      <a href="#noymi">Quién soy</a><a href="#preguntas">Preguntas</a>
     </div>
     <a class="btn solid" href="tel:+10000000000"><span class="ph">(000) 000-0000</span></a>
   </div>
@@ -371,7 +380,6 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     <div class="rv" style="width:min(560px,100%);margin:2.4rem auto 0">
       <p class="sidelabel">Qué incluye el precio</p>
       <p class="lead" id="frecNota">Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.</p>
-      <p class="lead" style="margin-top:1.1rem">La primera visita suele ser una <i>limpieza profunda</i> y se cotiza aparte, porque toma más tiempo llegar a lo que no se ha tocado en meses.</p>
       <p class="note" style="margin-top:1.4rem"><span class="ph">Confirmar todos los precios con Noymi</span> · los números de arriba son de referencia.</p>
     </div>
   </div>
@@ -386,21 +394,8 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
       <p class="sidelabel">IV · Quién limpia su casa</p>
       <h2>No es una agencia.<br><i>Soy yo.</i></h2>
       <p class="lead dropcap" style="margin-top:1.6rem">Me llamo <span class="ph">Noymi</span> y llevo <span class="ph">00</span> años limpiando casas en el área de Phoenixville. Cuando usted me contrata, soy yo la que llega a su puerta, no un equipo distinto cada semana que hay que volver a entrenar.</p>
-      <p class="lead">Eso cambia cómo se trabaja. Me aprendo su casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Después de dos o tres visitas ya no hace falta que me explique nada.</p>
       <p class="lead"><span class="ph">Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.</span></p>
     </div>
-  </div>
-</section>
-
-<!-- ═══ GALERÍA ═══ -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="gal">
-      <figure class="tall rv"><img src="img/bano.jpg?h=78290901" alt="Baño limpio" loading="lazy"><figcaption>Baño</figcaption></figure>
-      <figure class="wide rv"><img src="img/cocina2.jpg?h=12e5ee3f" alt="Cocina limpia" loading="lazy"><figcaption>Cocina</figcaption></figure>
-      <figure class="wide rv"><img src="img/comedor.jpg?h=4156e728" alt="Comedor limpio" loading="lazy"><figcaption>Comedor</figcaption></figure>
-    </div>
-    <p class="note rv" style="margin-top:1rem"><span class="ph">Cambiar por fotos reales de casas que ella ha limpiado</span></p>
   </div>
 </section>
 
@@ -412,29 +407,14 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   </div>
 </section>
 
-<!-- ═══ V · ZONAS ═══ -->
-<section id="zonas">
-  <div class="wrap">
-    <img class="secimg rv" style="object-position:28% center" src="img/ventana.jpg?h=efd3e0ac" alt="Sala con luz de ventana" width="1100" height="734" loading="lazy">
-    <div class="head rv">
-      <span class="no">V</span>
-      <h2>Dónde trabajo</h2>
-      <p class="lead">Con base en Phoenixville, PA 19460. Si su pueblo no aparece, pregunte igual.</p>
-    </div>
-    <div class="zonas rv" id="zonalist"></div>
-  </div>
-</section>
-
 <!-- ═══ VI · PREGUNTAS ═══ -->
 <section id="preguntas" style="background:var(--paper-2)">
   <div class="wrap" style="max-width:860px">
     <img class="secimg rv" src="img/aspirado.jpg?h=76ed6b07" alt="Aspiradora sobre piso de madera" width="733" height="1100" loading="lazy" style="aspect-ratio:16/9">
-    <div class="head rv"><span class="no">VI</span><h2>Preguntas</h2></div>
+    <div class="head rv"><span class="no">V</span><h2>Preguntas</h2></div>
     <div>
       <details class="rv"><summary>¿Tengo que estar en la casa?</summary><p>No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.</p></details>
       <details class="rv"><summary>¿Usted trae los productos?</summary><p>Sí, traigo todo. Si prefiere que use algo que ya tiene en casa, lo uso sin problema.</p></details>
-      <details class="rv"><summary>¿Qué pasa si algo se rompe?</summary><p><span class="ph">Confirmar si tiene seguro</span>. Si algo se daña, se lo digo el mismo día y lo resolvemos.</p></details>
-      <details class="rv"><summary>¿Cada cuánto conviene?</summary><p>La mayoría de las casas cada dos semanas. Con niños chicos o mascotas, cada semana funciona mejor.</p></details>
       <details class="rv"><summary>¿Cómo se paga?</summary><p><span class="ph">Confirmar formas de pago</span> — efectivo, Zelle, Venmo o cheque, el mismo día del servicio.</p></details>
       <details class="rv"><summary>¿Habla inglés?</summary><p><span class="ph">Confirmar</span>. Se puede coordinar todo por mensaje de texto si le resulta más cómodo.</p></details>
     </div>
@@ -445,7 +425,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <section id="presupuesto">
   <div class="wrap" style="max-width:780px">
     <img class="secimg rv" src="img/escritorio.jpg?h=50c5d58c" alt="Escritorio ordenado con una planta" width="1100" height="733" loading="lazy">
-    <div class="head rv"><span class="no">VII</span><h2>Pida su presupuesto</h2><p class="lead">Le respondo el mismo día. Sin compromiso.</p></div>
+    <div class="head rv"><span class="no">VI</span><h2>Pida su presupuesto</h2><p class="lead">Le respondo el mismo día. Sin compromiso.</p></div>
     <form id="quote" class="rv" novalidate>
       <div class="two">
         <div><label for="nombre">Nombre</label><input id="nombre" autocomplete="name" required></div>
@@ -471,6 +451,10 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     </div>
     <div><span class="caps">Contacto</span><p><span class="ph">(000) 000-0000</span><br><span class="ph">correo@ejemplo.com</span></p></div>
     <div><span class="caps">Horario</span><p><span class="ph">Lunes a viernes, 8am–5pm</span></p></div>
+  </div>
+  <div class="wrap" style="margin-top:2.4rem">
+    <span class="caps" style="color:rgba(251,249,245,.5);display:block;margin-bottom:.7rem">Zonas que atiendo</span>
+    <p id="pueblosPie" style="max-width:620px;margin-inline:auto;line-height:1.9"></p>
   </div>
   <div class="wrap" style="margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(251,249,245,.16);font-size:.82rem">
     Noymi House Cleaning Service · Phoenixville, Pensilvania
@@ -524,8 +508,7 @@ document.getElementById("rooms").innerHTML = DATA.cuartosDetalle.map(r=>`
     <div class="body"><h3>${r.n}<b>${r.t}</b></h3><ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>
   </div>`).join("");
 
-/* towns, as centred chips - a two-column list has nowhere to be on a phone */
-document.getElementById("zonalist").innerHTML = DATA.pueblos.map(t=>`<span>${t}</span>`).join("");
+document.getElementById("pueblosPie").textContent = DATA.pueblos.join(" · ");
 
 /* form services */
 document.getElementById("tipo").innerHTML = DATA.servicios.map(s=>`<option value="${s.k}">${s.n}</option>`).join("");
@@ -591,15 +574,19 @@ render();
 
 /* ── SPLASH ── */
 const sp=document.getElementById("splash");
+function enter(){ document.body.classList.remove("pre"); document.body.classList.add("entered"); }
 function leave(target){
   if(sp.classList.contains("out")) return;
-  sp.classList.add("out"); document.body.classList.remove("locked");
-  setTimeout(()=>sp.classList.add("go"),1100);
-  if(target) setTimeout(()=>document.querySelector(target)?.scrollIntoView({behavior:"smooth"}),240);
+  sp.classList.add("out");                       // shutters close to paper over the photograph
+  document.body.classList.remove("locked");
+  setTimeout(()=>{ sp.classList.add("fade"); enter(); }, 760);   // dissolve, page rises into it
+  setTimeout(()=>sp.classList.add("go"), 1600);                  // only then leave the DOM
+  if(target) setTimeout(()=>document.querySelector(target)?.scrollIntoView({behavior:"smooth"}),1450);
 }
 if(new URLSearchParams(location.search).has("nosplash")){
-  sp.classList.add("go"); document.body.classList.remove("locked");
+  sp.classList.add("go"); document.body.classList.remove("locked"); enter();
 }else{
+  document.body.classList.add("pre");
   document.getElementById("skip").addEventListener("click",e=>{e.preventDefault();leave("#inicio")});
   document.getElementById("enter").addEventListener("click",e=>{e.preventDefault();leave("#presupuesto")});
 }
