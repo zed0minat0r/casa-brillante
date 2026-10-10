@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#FBF9F5">
 <meta property="og:title" content="Noymi House Cleaning Service · Phoenixville, PA">
 <meta property="og:description" content="Limpieza de casas y oficinas en Phoenixville y alrededores. Siempre la misma persona, precio cerrado antes de empezar.">
-<meta property="og:image" content="https://zed0minat0r.github.io/casa-brillante/img/sala.jpg">
+<meta property="og:image" content="https://zed0minat0r.github.io/casa-brillante/img/sala.jpg?h=db12689a">
 <meta property="og:url" content="https://zed0minat0r.github.io/casa-brillante/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_US">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HouseKeepingService","name":"Noymi House Cleaning Service","areaServed":{"@type":"City","name":"Phoenixville","addressRegion":"PA"},"address":{"@type":"PostalAddress","addressLocality":"Phoenixville","addressRegion":"PA","postalCode":"19460","addressCountry":"US"},"url":"https://zed0minat0r.github.io/casa-brillante/","image":"https://zed0minat0r.github.io/casa-brillante/img/sala.jpg","availableLanguage":["es"],"priceRange":"$$"}
+{"@context":"https://schema.org","@type":"HouseKeepingService","name":"Noymi House Cleaning Service","areaServed":{"@type":"City","name":"Phoenixville","addressRegion":"PA"},"address":{"@type":"PostalAddress","addressLocality":"Phoenixville","addressRegion":"PA","postalCode":"19460","addressCountry":"US"},"url":"https://zed0minat0r.github.io/casa-brillante/","image":"https://zed0minat0r.github.io/casa-brillante/img/sala.jpg?h=db12689a","availableLanguage":["es"],"priceRange":"$$"}
 </script>
 <style>
 /* ════════════════════════════════════════════════════════════════════════════════════════════
@@ -68,7 +68,9 @@ img{display:block;max-width:100%;height:auto}
 .mid{width:min(760px,calc(100% - 2.6rem));margin-inline:auto}
 .caps{font-family:var(--body);font-weight:600;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
 .lead{font-size:1.1rem;line-height:1.62;color:var(--ink-2)}
-.ph{background:var(--ph-bg);color:var(--ph-ink);padding:0 .34em;border-radius:3px;font-weight:600;font-size:.92em;white-space:nowrap;font-family:var(--body);letter-spacing:0}
+/* NOT nowrap: a sentence-length placeholder would run straight off a 390px screen. The short
+   ones (a phone number, an email) have no space to break at anyway. */
+.ph{background:var(--ph-bg);color:var(--ph-ink);padding:.05em .34em;border-radius:3px;font-weight:600;font-size:.92em;font-family:var(--body);letter-spacing:0;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 section{padding:6rem 0;position:relative}
 .hr{height:1px;background:var(--line);border:0;margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);padding:0 1.8rem;font-family:var(--body);font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;border-radius:2px;cursor:pointer;transition:background .22s,color .22s}
@@ -78,12 +80,17 @@ section{padding:6rem 0;position:relative}
 .btn.clay{background:var(--clay);border-color:var(--clay);color:#fff}
 .btn.clay:hover{background:var(--clay-2);border-color:var(--clay-2)}
 
-/* ── SECTION HEADS: a number in the margin, the way a printed piece numbers its sections ── */
-.head{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:3rem}
-.head .no{font-family:var(--display);font-size:1rem;color:var(--clay);padding-top:.55rem;letter-spacing:.06em}
-.head h2{margin-top:-.4rem}
-.head .lead{margin-top:.9rem;max-width:620px}
-@media(max-width:639px){.head{grid-template-columns:1fr;gap:.4rem}.head .no{padding-top:0}}
+/* ── SECTION HEADS: CENTRED, with the roman numeral sitting over the heading rather than beside
+   it. Matt reviews this on a PHONE only, where a margin numeral has no margin to sit in. ── */
+.head{text-align:center;margin-bottom:2.6rem}
+.head .no{display:block;font-family:var(--display);font-size:1rem;color:var(--clay);letter-spacing:.3em;margin-bottom:.7rem}
+.head .lead{margin:1rem auto 0;max-width:560px}
+
+/* every section carries a picture - small, centred, one consistent shape */
+.secimg{display:block;width:min(560px,100%);margin:0 auto 2.4rem;aspect-ratio:16/9;object-fit:cover;border-radius:3px}
+.secimg.tall{aspect-ratio:4/5;width:min(330px,76%)}
+.secimg+.head{margin-top:0}
+.capline{text-align:center;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-top:-1.9rem;margin-bottom:2.4rem}
 
 /* ── SPLASH ──────────────────────────────────────────────────────────────────────────────────
    A cream page with a wordmark on it is the thing Matt called basic, twice. So the splash is a
@@ -91,7 +98,7 @@ section{padding:6rem 0;position:relative}
    drifting very slowly - and it leaves by two shutters sliding apart off the top and bottom,
    which is a reveal rather than a fade. ───────────────────────────────────────────────────── */
 .splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1.5rem;background:#15150F;overflow:hidden}
-.splash .bg{position:absolute;inset:-4%;background:url("img/sala.jpg") center/cover no-repeat;animation:drift 15s ease-in-out infinite alternate;z-index:0}
+.splash .bg{position:absolute;inset:-4%;background:url("img/sala.jpg?h=db12689a") center/cover no-repeat;animation:drift 15s ease-in-out infinite alternate;z-index:0}
 .splash .scrim{position:absolute;inset:0;z-index:1;
   background:radial-gradient(60% 46% at 50% 50%,rgba(21,21,15,.55),transparent 72%),
              linear-gradient(180deg,rgba(21,21,15,.74),rgba(21,21,15,.52) 40%,rgba(21,21,15,.88))}
@@ -128,6 +135,10 @@ section{padding:6rem 0;position:relative}
 
 /* ── HERO, CENTRED ── */
 .hero{text-align:center;padding:5.5rem 0 0}
+/* CENTRED SITE. Headings, labels and standalone lines centre; running prose and the room
+   checklists stay left-aligned, because centred body copy and centred bullets are unreadable. */
+section{text-align:center}
+section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 .hero .kick{color:var(--clay)}
 .hero h1{margin:1.3rem 0 0}
 .hero .lead{max-width:560px;margin:1.6rem auto 0}
@@ -160,36 +171,35 @@ section{padding:6rem 0;position:relative}
 .ba .tag.l{left:1rem}.ba .tag.r{right:1rem}
 
 /* ── PRICE CALCULATOR ── */
-.calc{display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;align-items:center}
-@media(max-width:899px){.calc{grid-template-columns:1fr;gap:1.8rem}}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:2rem 1.8rem}
+.calc{width:min(560px,calc(100% - .2rem));margin:0 auto}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:2rem 1.8rem;text-align:left}
 .field{margin-bottom:1.1rem}
 .field label{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;font-weight:600;color:var(--ink-2);margin-bottom:.5rem}
 .seg{display:flex;gap:.4rem;flex-wrap:wrap}
-.seg button{flex:1;min-width:52px;min-height:46px;border:1px solid var(--line-2);background:transparent;border-radius:2px;font-family:var(--body);font-size:.95rem;color:var(--ink);cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.seg button{flex:1;min-width:52px;min-height:46px;padding:0 .3rem;line-height:1.2;border:1px solid var(--line-2);background:transparent;border-radius:2px;font-family:var(--body);font-size:.95rem;color:var(--ink);cursor:pointer;transition:background .18s,color .18s,border-color .18s}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* four word-labels will not sit in one row on a 390px phone - "Quincenal" clips. Two up. */
+@media(max-width:639px){#segFrec{display:grid;grid-template-columns:1fr 1fr}}
 .out{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1.4rem;text-align:center}
 .out .n{font-family:var(--display);font-size:clamp(2.6rem,7vw,3.6rem);line-height:1;display:block}
 .out .u{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);display:block;margin-top:.5rem}
 
 /* ── ROOM BY ROOM ── */
-.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
-@media(max-width:759px){.rooms{grid-template-columns:1fr}}
-.room{border-bottom:1px solid var(--line);padding:2rem 0}
-.room:nth-child(odd){padding-right:2.4rem;border-right:1px solid var(--line)}
-.room:nth-child(even){padding-left:2.4rem}
-@media(max-width:759px){.room:nth-child(odd){padding-right:0;border-right:0}.room:nth-child(even){padding-left:0}}
-.room h3{display:flex;align-items:baseline;gap:.7rem}
-.room h3 b{font-family:var(--body);font-size:.66rem;letter-spacing:.2em;color:var(--clay);font-weight:600}
-.room ul{margin:.9rem 0 0;padding-left:1.05rem;color:var(--ink-2);font-size:.96rem}
+.rooms{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
+@media(max-width:759px){.rooms{grid-template-columns:1fr;gap:2rem}}
+.room{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;text-align:center}
+.room img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.room .body{padding:1.5rem 1.4rem 1.7rem}
+.room h3{display:block}
+.room h3 b{display:block;font-family:var(--body);font-size:.64rem;letter-spacing:.2em;color:var(--clay);font-weight:600;margin-top:.4rem}
+.room ul{margin:1.1rem 0 0;padding-left:1.05rem;color:var(--ink-2);font-size:.96rem;display:inline-block;text-align:left}
 .room li{margin:.3rem 0}
 
 /* ── HER STORY: drop cap, margin label, big outline watermark behind ── */
 .story{position:relative;overflow:hidden;background:var(--paper-2)}
 .story .mark-bg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:clamp(9rem,26vw,22rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(21,21,15,.08);white-space:nowrap;pointer-events:none;user-select:none}
-.story .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:3rem;align-items:center;position:relative}
-@media(max-width:899px){.story .grid{grid-template-columns:1fr;gap:2rem}}
-.portrait{aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#E8E2D6 0 18px,#E2DBCC 18px 36px);border:1px solid var(--line);border-radius:3px;display:grid;place-items:center;text-align:center;padding:1.5rem}
+.story .grid{position:relative;width:min(640px,calc(100% - 2.6rem));margin:0 auto;text-align:center}
+.portrait{aspect-ratio:4/5;width:min(300px,70%);margin:0 auto 2.2rem;background:repeating-linear-gradient(135deg,#E8E2D6 0 18px,#E2DBCC 18px 36px);border:1px solid var(--line);border-radius:3px;display:grid;place-items:center;text-align:center;padding:1.5rem}
 .portrait span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 .story p+p{margin-top:1.1rem}
 .dropcap::first-letter{font-family:var(--display);float:left;font-size:3.9rem;line-height:.84;padding:.1rem .5rem 0 0;color:var(--clay)}
@@ -198,7 +208,7 @@ section{padding:6rem 0;position:relative}
 /* ── GALLERY, asymmetric on purpose ── */
 /* the tall frame sets the row height and the two on the right split it, so there is no gap
    left over at the bottom of the short column - which is what an auto row height gives you */
-.gal{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:1rem;height:min(76vh,760px)}
+.gal{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:1rem;height:min(76vh,760px);width:min(1180px,100%);margin:0 auto}
 .gal figure{margin:0;position:relative;overflow:hidden;border-radius:3px;min-height:0}
 .gal img{width:100%;height:100%;object-fit:cover}
 .gal .tall{grid-row:span 2}
@@ -206,18 +216,20 @@ section{padding:6rem 0;position:relative}
 @media(max-width:759px){.gal{grid-template-columns:1fr;grid-template-rows:none;height:auto}.gal figure{grid-row:auto;aspect-ratio:4/3}}
 
 /* ── QUOTE ── */
+.zonas{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;max-width:720px;margin:0 auto}
+.zonas span{border:1px solid var(--line-2);border-radius:999px;padding:.5rem 1.1rem;font-size:.92rem;color:var(--ink-2)}
 .pull{font-family:var(--display);font-size:clamp(1.7rem,4.2vw,2.7rem);line-height:1.22;text-align:center;letter-spacing:-.018em}
 .pull i{color:var(--clay)}
 .attrib{text-align:center;margin-top:1.4rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 
 details{border-bottom:1px solid var(--line);padding:1.2rem 0}
-summary{cursor:pointer;font-family:var(--display);font-size:1.26rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+summary{cursor:pointer;font-family:var(--display);font-size:1.26rem;list-style:none;display:flex;justify-content:center;align-items:center;gap:.75rem;text-align:center}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--clay);font-size:1.3rem}
 details[open] summary::after{content:"−"}
-details p{margin-top:.8rem;color:var(--ink-2);font-size:.98rem}
+details p{margin-top:.8rem;color:var(--ink-2);font-size:.98rem;text-align:center}
 
-form{display:grid;gap:.9rem;margin-top:2.2rem;text-align:left}
+form{display:grid;gap:.9rem;margin-top:2.2rem;text-align:left;width:min(620px,calc(100% - .2rem));margin-inline:auto}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
 @media(max-width:639px){.two{grid-template-columns:1fr}}
 input,select,textarea{width:100%;min-height:var(--tap);padding:.8rem .95rem;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:2px}
@@ -229,7 +241,8 @@ form label{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:up
 
 footer{background:var(--ink);color:rgba(251,249,245,.7);padding:4rem 0 2.6rem;font-size:.93rem}
 footer a{color:#fff}
-footer .cols{display:flex;justify-content:space-between;gap:2.4rem;flex-wrap:wrap}
+footer{text-align:center}
+footer .cols{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
 footer .mark{color:var(--paper);font-size:1.6rem}
 footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 
@@ -282,7 +295,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
       <a class="btn" href="#precios">Calcular mi precio</a>
     </div>
     <div class="heroshot">
-      <img src="img/sala.jpg" alt="Sala limpia y ordenada con luz natural" width="1024" height="683">
+      <img src="img/sala.jpg?h=db12689a" alt="Sala limpia y ordenada con luz natural" width="1024" height="683">
       <span class="cap">Foto de referencia · pendiente cambiar por fotos de su trabajo</span>
     </div>
   </div>
@@ -296,10 +309,8 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   <div class="wrap">
     <div class="head rv">
       <span class="no">I</span>
-      <div>
-        <h2>Lo que se hace<br>en cada cuarto</h2>
-        <p class="lead">Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.</p>
-      </div>
+      <h2>Lo que se hace<br>en cada cuarto</h2>
+      <p class="lead">Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.</p>
     </div>
     <div class="rooms" id="rooms"></div>
   </div>
@@ -310,15 +321,13 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   <div class="wrap">
     <div class="head rv">
       <span class="no">II</span>
-      <div>
-        <h2>Antes y <i>después</i></h2>
-        <p class="lead">Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.</p>
-      </div>
+      <h2>Antes y <i>después</i></h2>
+      <p class="lead">Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.</p>
     </div>
     <div class="ba rv" id="ba">
-      <img class="before" src="img/sala.jpg" alt="La sala antes de limpiar">
+      <img class="before" src="img/sala.jpg?h=db12689a" alt="La sala antes de limpiar">
       <span class="tag l">Antes</span>
-      <img class="after" id="after" src="img/sala.jpg" alt="La sala después de limpiar">
+      <img class="after" id="after" src="img/sala.jpg?h=db12689a" alt="La sala después de limpiar">
       <span class="tag r">Después</span>
       <div class="handle" id="handle"><span class="knob">⇄</span></div>
     </div>
@@ -329,12 +338,11 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <!-- ═══ III · PRECIOS ═══ -->
 <section id="precios">
   <div class="wrap">
+    <img class="secimg tall rv" src="img/loza.jpg?h=f8d74252" alt="Loza limpia acomodada en una repisa" width="733" height="1100" loading="lazy">
     <div class="head rv">
       <span class="no">III</span>
-      <div>
-        <h2>Calcule su precio</h2>
-        <p class="lead">Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.</p>
-      </div>
+      <h2>Calcule su precio</h2>
+      <p class="lead">Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.</p>
     </div>
     <div class="calc">
       <div class="panel rv">
@@ -354,14 +362,14 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
           <span class="n" id="precio">—</span>
           <span class="u" id="precioU">por visita</span>
         </div>
-        <a class="btn clay" href="#presupuesto" style="width:100%;margin-top:1.2rem">Pedir este precio por escrito</a>
+        <a class="btn clay" href="#presupuesto" style="width:100%;margin-top:1.2rem">Pedir este precio</a>
       </div>
-      <div class="rv">
-        <p class="sidelabel">Qué incluye el precio</p>
-        <p class="lead" id="frecNota">Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.</p>
-        <p class="lead" style="margin-top:1.1rem">La primera visita suele ser una <i>limpieza profunda</i> y se cotiza aparte, porque toma más tiempo llegar a lo que no se ha tocado en meses.</p>
-        <p class="note" style="margin-top:1.4rem"><span class="ph">Confirmar todos los precios con Noymi</span> · los números de arriba son de referencia.</p>
-      </div>
+    </div>
+    <div class="rv" style="width:min(560px,100%);margin:2.4rem auto 0">
+      <p class="sidelabel">Qué incluye el precio</p>
+      <p class="lead" id="frecNota">Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.</p>
+      <p class="lead" style="margin-top:1.1rem">La primera visita suele ser una <i>limpieza profunda</i> y se cotiza aparte, porque toma más tiempo llegar a lo que no se ha tocado en meses.</p>
+      <p class="note" style="margin-top:1.4rem"><span class="ph">Confirmar todos los precios con Noymi</span> · los números de arriba son de referencia.</p>
     </div>
   </div>
 </section>
@@ -385,9 +393,9 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="gal">
-      <figure class="tall rv"><img src="img/recamara.jpg" alt="Recámara ordenada"><figcaption>Recámara</figcaption></figure>
-      <figure class="wide rv"><img src="img/comedor.jpg" alt="Comedor limpio"><figcaption>Comedor</figcaption></figure>
-      <figure class="wide rv"><img src="img/sala.jpg" alt="Sala limpia"><figcaption>Sala</figcaption></figure>
+      <figure class="tall rv"><img src="img/bano.jpg?h=78290901" alt="Baño limpio" loading="lazy"><figcaption>Baño</figcaption></figure>
+      <figure class="wide rv"><img src="img/cocina2.jpg?h=12e5ee3f" alt="Cocina limpia" loading="lazy"><figcaption>Cocina</figcaption></figure>
+      <figure class="wide rv"><img src="img/comedor.jpg?h=4156e728" alt="Comedor limpio" loading="lazy"><figcaption>Comedor</figcaption></figure>
     </div>
     <p class="note rv" style="margin-top:1rem"><span class="ph">Cambiar por fotos reales de casas que ella ha limpiado</span></p>
   </div>
@@ -404,21 +412,21 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <!-- ═══ V · ZONAS ═══ -->
 <section id="zonas">
   <div class="wrap">
+    <img class="secimg rv" src="img/ventana.jpg?h=efd3e0ac" alt="Sala con luz de ventana" width="1100" height="734" loading="lazy">
     <div class="head rv">
       <span class="no">V</span>
-      <div>
-        <h2>Dónde trabajo</h2>
-        <p class="lead">Con base en Phoenixville, PA 19460. Si su pueblo no aparece, pregunte igual.</p>
-      </div>
+      <h2>Dónde trabajo</h2>
+      <p class="lead">Con base en Phoenixville, PA 19460. Si su pueblo no aparece, pregunte igual.</p>
     </div>
-    <div class="rooms rv" style="border-top:0" id="zonalist"></div>
+    <div class="zonas rv" id="zonalist"></div>
   </div>
 </section>
 
 <!-- ═══ VI · PREGUNTAS ═══ -->
 <section id="preguntas" style="background:var(--paper-2)">
   <div class="wrap" style="max-width:860px">
-    <div class="head rv"><span class="no">VI</span><div><h2>Preguntas</h2></div></div>
+    <img class="secimg rv" src="img/aspirado.jpg?h=76ed6b07" alt="Aspiradora sobre piso de madera" width="733" height="1100" loading="lazy" style="aspect-ratio:16/9">
+    <div class="head rv"><span class="no">VI</span><h2>Preguntas</h2></div>
     <div>
       <details class="rv"><summary>¿Tengo que estar en la casa?</summary><p>No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.</p></details>
       <details class="rv"><summary>¿Usted trae los productos?</summary><p>Sí, traigo todo. Si prefiere que use algo que ya tiene en casa, lo uso sin problema.</p></details>
@@ -433,7 +441,8 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <!-- ═══ VII · PRESUPUESTO ═══ -->
 <section id="presupuesto">
   <div class="wrap" style="max-width:780px">
-    <div class="head rv"><span class="no">VII</span><div><h2>Pida su presupuesto</h2><p class="lead">Le respondo el mismo día. Sin compromiso.</p></div></div>
+    <img class="secimg rv" src="img/escritorio.jpg?h=50c5d58c" alt="Escritorio ordenado con una planta" width="1100" height="733" loading="lazy">
+    <div class="head rv"><span class="no">VII</span><h2>Pida su presupuesto</h2><p class="lead">Le respondo el mismo día. Sin compromiso.</p></div>
     <form id="quote" class="rv" novalidate>
       <div class="two">
         <div><label for="nombre">Nombre</label><input id="nombre" autocomplete="name" required></div>
@@ -444,9 +453,9 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
         <div><label for="tipo">Tipo de limpieza</label><select id="tipo"></select></div>
       </div>
       <div><label for="mensaje">¿Algo que deba saber?</label><textarea id="mensaje" placeholder="Mascotas, alergias, cuartos que no se tocan, horarios…"></textarea></div>
-      <button class="btn clay" type="submit" style="justify-self:start">Enviar</button>
-      <p class="note">O llame al <span class="ph">(000) 000-0000</span>.</p>
-      <p class="sent" id="sent" aria-live="polite"></p>
+      <button class="btn clay" type="submit" style="justify-self:center;min-width:220px">Enviar</button>
+      <p class="note" style="text-align:center">O llame al <span class="ph">(000) 000-0000</span>.</p>
+      <p class="sent" id="sent" aria-live="polite" style="text-align:center"></p>
     </form>
   </div>
 </section>
@@ -488,13 +497,13 @@ const DATA = {
     {k:"oficina", n:"Oficina o consultorio"}
   ],
   cuartosDetalle:[
-    {n:"Cocina", t:"Todo lo que se toca a diario",
+    {n:"Cocina", t:"Todo lo que se toca a diario", img:"cocina.jpg?h=71118dff",
      items:["Mesones y fregadero","Estufa y campana por fuera","Microondas por dentro y por fuera","Frente de gabinetes","Piso barrido y trapeado","Basura afuera"]},
-    {n:"Baños", t:"Lo que de verdad importa",
+    {n:"Baños", t:"Lo que de verdad importa", img:"bano.jpg?h=78290901",
      items:["Inodoro completo, también atrás","Regadera y mampara","Azulejo y juntas","Espejos sin marcas","Lavabo y grifería","Piso desinfectado"]},
-    {n:"Recámaras", t:"Orden, no sólo limpieza",
+    {n:"Recámaras", t:"Orden, no sólo limpieza", img:"recamara.jpg?h=ed644046",
      items:["Camas tendidas","Polvo en muebles y repisas","Debajo de la cama","Marcos y rodapiés","Espejos y vidrios","Aspirado completo"]},
-    {n:"Sala y comedor", t:"Donde se recibe",
+    {n:"Sala y comedor", t:"Donde se recibe", img:"sala.jpg?h=db12689a",
      items:["Polvo en todo","Cojines acomodados","Debajo de los muebles","Mesas y superficies","Vidrios de interior","Aspirado y trapeado"]}
   ],
   pueblos:["Phoenixville","Collegeville","Royersford","Spring City","Malvern","Chesterbrook",
@@ -507,13 +516,13 @@ document.getElementById("run").innerHTML = towns + towns;
 
 /* room-by-room */
 document.getElementById("rooms").innerHTML = DATA.cuartosDetalle.map(r=>`
-  <div class="room rv"><h3>${r.n} <b>${r.t}</b></h3><ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>`).join("");
+  <div class="room rv">
+    <img src="img/${r.img}" alt="${r.n}" loading="lazy">
+    <div class="body"><h3>${r.n}<b>${r.t}</b></h3><ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>
+  </div>`).join("");
 
-/* towns, as a second two-column list */
-document.getElementById("zonalist").innerHTML = [0,1].map(col=>`
-  <div class="room rv"><ul style="list-style:none;padding:0">${
-    DATA.pueblos.filter((_,i)=>i%2===col).map(t=>`<li style="padding:.45rem 0;border-bottom:1px solid var(--line)">${t}</li>`).join("")
-  }</ul></div>`).join("");
+/* towns, as centred chips - a two-column list has nowhere to be on a phone */
+document.getElementById("zonalist").innerHTML = DATA.pueblos.map(t=>`<span>${t}</span>`).join("");
 
 /* form services */
 document.getElementById("tipo").innerHTML = DATA.servicios.map(s=>`<option value="${s.k}">${s.n}</option>`).join("");
