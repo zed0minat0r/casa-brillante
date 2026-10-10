@@ -90,7 +90,6 @@ section{padding:6rem 0;position:relative}
 .secimg{display:block;width:min(560px,100%);margin:0 auto 2.4rem;aspect-ratio:16/9;object-fit:cover;border-radius:3px}
 .secimg.tall{aspect-ratio:4/5;width:min(330px,76%)}
 .secimg+.head{margin-top:0}
-.capline{text-align:center;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-top:-1.9rem;margin-bottom:2.4rem}
 
 /* ── SPLASH ──────────────────────────────────────────────────────────────────────────────────
    A cream page with a wordmark on it is the thing Matt called basic, twice. So the splash is a
@@ -143,9 +142,10 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 .hero h1{margin:1.3rem 0 0}
 .hero .lead{max-width:560px;margin:1.6rem auto 0}
 .hero .cta{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+@media(max-width:639px){.hero .cta{flex-direction:column;align-items:center}.hero .cta .btn{width:min(280px,100%)}}
 .heroshot{margin-top:4rem;position:relative}
 .heroshot img{width:100%;height:clamp(300px,52vh,560px);object-fit:cover;border-radius:3px}
-.heroshot .cap{position:absolute;left:0;bottom:-1.9rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.heroshot .cap{display:block;margin-top:.85rem;text-align:center;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);line-height:1.5}
 
 /* ── TICKER of the towns ── */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:.95rem 0;margin-top:3.4rem;background:var(--paper-2)}
@@ -156,6 +156,7 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 
 /* ── BEFORE / AFTER WIPE. The one thing on this page that only a cleaner would have. ── */
 .ba{position:relative;overflow:hidden;border-radius:3px;cursor:ew-resize;user-select:none;touch-action:none;aspect-ratio:16/9;background:#ddd}
+@media(max-width:639px){.ba{aspect-ratio:4/3}}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* THE "BEFORE" IS THE SAME PHOTOGRAPH, GRADED. There is no staged dirty room to shoot and a
    mismatched stock photo would be obvious; pulling the colour, dropping the light and hazing it
@@ -210,9 +211,11 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
    left over at the bottom of the short column - which is what an auto row height gives you */
 .gal{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:1rem;height:min(76vh,760px);width:min(1180px,100%);margin:0 auto}
 .gal figure{margin:0;position:relative;overflow:hidden;border-radius:3px;min-height:0}
+.gal figure::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(21,21,15,.55))}
 .gal img{width:100%;height:100%;object-fit:cover}
 .gal .tall{grid-row:span 2}
-.gal figcaption{position:absolute;left:.9rem;bottom:.8rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.gal figcaption{position:absolute;z-index:2;left:.9rem;bottom:.8rem;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:#fff}
 @media(max-width:759px){.gal{grid-template-columns:1fr;grid-template-rows:none;height:auto}.gal figure{grid-row:auto;aspect-ratio:4/3}}
 
 /* ── QUOTE ── */
@@ -296,7 +299,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     </div>
     <div class="heroshot">
       <img src="img/sala.jpg?h=db12689a" alt="Sala limpia y ordenada con luz natural" width="1024" height="683">
-      <span class="cap">Foto de referencia · pendiente cambiar por fotos de su trabajo</span>
+      <span class="cap">Foto de referencia · pendiente</span>
     </div>
   </div>
 </header>
@@ -412,7 +415,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <!-- ═══ V · ZONAS ═══ -->
 <section id="zonas">
   <div class="wrap">
-    <img class="secimg rv" src="img/ventana.jpg?h=efd3e0ac" alt="Sala con luz de ventana" width="1100" height="734" loading="lazy">
+    <img class="secimg rv" style="object-position:28% center" src="img/ventana.jpg?h=efd3e0ac" alt="Sala con luz de ventana" width="1100" height="734" loading="lazy">
     <div class="head rv">
       <span class="no">V</span>
       <h2>Dónde trabajo</h2>
