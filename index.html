@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Brillante · Limpieza de casas en Phoenixville, PA</title>
+<meta name="description" content="Servicio de limpieza residencial y de oficinas en Phoenixville, Pensilvania. Limpieza regular, limpieza profunda, mudanzas y Airbnb. Presupuesto gratis.">
+<meta name="theme-color" content="#F6F2EA">
+<meta property="og:title" content="Casa Brillante · Limpieza de casas en Phoenixville, PA">
+<meta property="og:description" content="Limpieza residencial y de oficinas en Phoenixville y alrededores. Puntual, cuidadosa y con productos seguros para niños y mascotas.">
+<meta property="og:url" content="https://zed0minat0r.github.io/casa-brillante/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_US">
+<link rel="canonical" href="https://zed0minat0r.github.io/casa-brillante/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Figtree:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HouseKeepingService","name":"Casa Brillante","areaServed":{"@type":"City","name":"Phoenixville","addressRegion":"PA"},"address":{"@type":"PostalAddress","addressLocality":"Phoenixville","addressRegion":"PA","postalCode":"19460","addressCountry":"US"},"url":"https://zed0minat0r.github.io/casa-brillante/","availableLanguage":["es","en"],"priceRange":"$$"}
+</script>
+<style>
+/* ════════════════════════════════════════════════════════════════════════════════════════════
+   CASA BRILLANTE - limpieza, Phoenixville PA.
+
+   SAME SKELETON AS venetian-club AND paws-united, because Matt asked for it: "steal the format
+   from some other of the other websites we've built... a splash page and then a hero page that
+   centered." Single file, no build step, splash with sliding shutters, centred hero, yellow .ph
+   placeholders, prices from one object.
+
+   DELIBERATELY NOT DARK GLASS AND GOLD. That is the default AI look and he threw it out on the
+   Venetian build - "way too generic". A cleaning business sells LIGHT, AIR AND ORDER, so the page
+   is linen-white with a deep eucalyptus green and brass hairlines, and the only motion is slow.
+   Fraunces over Figtree: a warm serif, not the Cormorant the club uses and not Jakarta/Nunito
+   from Paws United, so none of the three read as the same template refilled.
+
+   EVERYTHING IS IN SPANISH on his instruction. Written as Spanish, not translated from English -
+   no "Nosotros proveemos servicios de calidad" machine register.
+   ════════════════════════════════════════════════════════════════════════════════════════════ */
+:root{
+  --linen:#F6F2EA; --linen-2:#EFE9DD; --paper:#FFFFFF;
+  --ink:#1B2420; --ink-2:#4A574F; --muted:#8B958C;
+  --green:#24433A; --green-2:#1A332C; --sage:#A8BFAE; --sage-soft:#DCE8DD;
+  --brass:#B08D4F; --brass-2:#8C6E3A;
+  --line:rgba(27,36,32,.13); --line-light:rgba(246,242,234,.22);
+  --ph-bg:#3B3310; --ph-ink:#F3DE92;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --tap:52px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--linen);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.06;font-weight:400;text-wrap:balance;font-variation-settings:"SOFT" 0,"WONK" 0}
+h1{font-size:clamp(2.5rem,7.4vw,4.8rem)}
+h2{font-size:clamp(2rem,5.4vw,3.3rem)}
+h3{font-size:1.32rem;font-weight:500}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{width:min(1140px,calc(100% - 2.5rem));margin-inline:auto}
+.narrow{width:min(660px,calc(100% - 2.5rem));margin-inline:auto;text-align:center}
+.caps{font-family:var(--body);font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase}
+.lead{font-size:1.07rem;color:var(--ink-2)}
+.ph{background:var(--ph-bg);color:var(--ph-ink);padding:0 .35em;border-radius:3px;font-weight:600;font-size:.92em;white-space:nowrap}
+section{padding:5.6rem 0}
+.rule{display:block;width:54px;height:1px;background:var(--brass);margin:1.5rem auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);padding:0 1.7rem;font-family:var(--body);font-weight:600;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--green);color:var(--green);background:transparent;border-radius:2px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--green);color:var(--linen)}
+.btn.solid{background:var(--green);color:var(--linen)}
+.btn.solid:hover{background:var(--green-2);border-color:var(--green-2)}
+.btn.light{border-color:rgba(246,242,234,.8);color:var(--linen)}
+.btn.light:hover{background:var(--linen);color:var(--green);border-color:var(--linen)}
+
+/* ═══ SPLASH. Shutters slide apart to reveal the hero - the Venetian mechanism, because it is the
+   one Matt has already approved. The mark draws itself: a brass ring closing around the monogram,
+   which is the only thing on this site that could be called an animation. ═══ */
+.splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1.5rem;background:var(--linen);transition:opacity .8s ease,visibility .8s}
+.splash::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(58% 48% at 50% 36%,rgba(168,191,174,.30),transparent 66%),radial-gradient(42% 32% at 50% 100%,rgba(176,141,79,.14),transparent 62%)}
+.splash.gone{display:none}
+.splash .shutter{position:absolute;left:0;width:100%;height:50%;background:var(--linen);z-index:0;transition:transform 1.1s cubic-bezier(.76,0,.24,1)}
+.splash .shutter.t{top:0}
+.splash .shutter.b{bottom:0}
+.splash.leaving{background:transparent;pointer-events:none}
+.splash.leaving::before{opacity:0;transition:opacity .4s}
+.splash.leaving .shutter.t{transform:translateY(-100%)}
+.splash.leaving .shutter.b{transform:translateY(100%)}
+.splash.leaving .splash-in>*:not(.markwrap){opacity:0;transform:translateY(-10px);transition:opacity .35s,transform .35s}
+.splash-in{position:relative;z-index:2;width:min(560px,100%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.05rem}
+.markwrap{width:168px;height:168px;position:relative;display:grid;place-items:center}
+.markwrap svg{position:absolute;inset:0;width:100%;height:100%}
+.ring{fill:none;stroke:var(--brass);stroke-width:1.1;stroke-dasharray:452;stroke-dashoffset:452;animation:draw 1.8s .25s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.monogram{font-family:var(--display);font-size:3.3rem;color:var(--green);letter-spacing:.02em;opacity:0;animation:rise .9s 1.0s both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.splash .eyebrow{animation:rise .9s 1.35s both;color:var(--brass-2)}
+.splash h1{font-size:clamp(2rem,7.4vw,3.2rem);animation:rise .9s 1.5s both}
+.splash .lead{animation:rise .9s 1.62s both;font-size:1rem}
+.splash .enter{animation:rise .9s 1.78s both}
+.splash .skip{animation:rise .9s 1.95s both;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.splash .skip:hover{color:var(--green);border-color:var(--green)}
+/* motes: the only thing drifting, and slowly - dust in a sunbeam, which is the right metaphor */
+.mote{position:absolute;border-radius:50%;background:rgba(176,141,79,.5);z-index:1;animation:float linear infinite}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-110vh)}}
+
+/* ═══ NAV ═══ */
+.nav{position:sticky;top:0;z-index:40;background:rgba(246,242,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
+.nav .brand{font-family:var(--display);font-size:1.22rem;text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.nav .links{display:flex;gap:1.8rem}
+.nav .links a{text-decoration:none;color:var(--ink-2);transition:color .2s}
+.nav .links a:hover{color:var(--green)}
+@media(max-width:899px){.nav .links{display:none}}
+
+/* ═══ HERO - CENTRED, which is the thing he asked for by name ═══ */
+.hero{position:relative;min-height:84vh;display:grid;place-items:center;text-align:center;padding:5rem 0 4rem;background:
+  radial-gradient(70% 55% at 50% 0%,rgba(220,232,221,.85),transparent 70%),
+  radial-gradient(50% 40% at 85% 95%,rgba(176,141,79,.10),transparent 70%),var(--linen)}
+.hero .in{display:flex;flex-direction:column;align-items:center;gap:1.1rem;max-width:760px}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-top:.7rem}
+.hero .trust{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;color:var(--muted);font-size:.82rem}
+.hero .trust span{display:inline-flex;align-items:center;gap:.45rem}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--brass);flex:none}
+
+/* ═══ SECTIONS ═══ */
+.band{background:var(--green);color:var(--linen)}
+.band h2,.band h3{color:var(--linen)}
+.band .lead{color:rgba(246,242,234,.82)}
+.band .caps{color:var(--sage)}
+.band .rule{background:var(--sage)}
+.grid{display:grid;gap:1.1rem;margin-top:2.8rem}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:899px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:639px){.g3,.g4,.g2{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:1.9rem 1.6rem;display:flex;flex-direction:column;gap:.7rem}
+.card .num{font-family:var(--display);font-size:.9rem;color:var(--brass)}
+.card p{color:var(--ink-2);font-size:.96rem}
+.card ul{margin:.3rem 0 0;padding-left:1.1rem;color:var(--ink-2);font-size:.94rem}
+.card li{margin:.25rem 0}
+.card .price{font-family:var(--display);font-size:1.6rem;color:var(--green);margin-top:auto;padding-top:.8rem}
+.band .card{background:rgba(255,255,255,.055);border-color:var(--line-light)}
+.band .card p,.band .card ul{color:rgba(246,242,234,.8)}
+.band .card .price{color:var(--sage)}
+
+.step{display:flex;gap:1.2rem;align-items:flex-start}
+.step .n{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--brass);flex:none;width:2.2rem}
+.step h3{margin-bottom:.3rem}
+.step p{color:var(--ink-2);font-size:.97rem}
+
+.towns{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:2rem}
+.towns span{border:1px solid var(--line);border-radius:999px;padding:.42rem 1.05rem;font-size:.88rem;color:var(--ink-2);background:var(--paper)}
+
+details{border-bottom:1px solid var(--line);padding:1.15rem 0}
+summary{cursor:pointer;font-family:var(--display);font-size:1.15rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--brass);font-size:1.3rem;flex:none}
+details[open] summary::after{content:"−"}
+details p{margin-top:.75rem;color:var(--ink-2);font-size:.98rem}
+
+form{display:grid;gap:.85rem;margin-top:2.2rem;text-align:left}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+@media(max-width:639px){.row2{grid-template-columns:1fr}}
+label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-2);display:block;margin-bottom:.35rem}
+input,select,textarea{width:100%;min-height:var(--tap);padding:.8rem .95rem;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:3px}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--sage);outline-offset:1px}
+.formnote{font-size:.86rem;color:var(--muted);margin-top:.2rem}
+.sent{color:var(--green);font-weight:600;margin-top:.6rem}
+
+footer{background:var(--green-2);color:rgba(246,242,234,.72);padding:3.4rem 0 2.6rem;font-size:.92rem}
+footer a{color:var(--sage)}
+footer .cols{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+footer .brand{font-family:var(--display);font-size:1.4rem;color:var(--linen)}
+
+/* reveal on scroll - phones have no hover, so this is what gives the page life */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .ring,.monogram,.splash .eyebrow,.splash h1,.splash .lead,.splash .enter,.splash .skip{animation:none;opacity:1;stroke-dashoffset:0}
+  .mote{display:none}
+}
+@media(max-width:759px){section{padding:3.6rem 0}.hero{min-height:88vh}}
+</style>
+</head>
+<body class="locked">
+
+<!-- ═══ SPLASH ═══ -->
+<div class="splash" id="splash">
+  <div class="shutter t" aria-hidden="true"></div>
+  <div class="shutter b" aria-hidden="true"></div>
+  <div class="splash-in">
+    <div class="markwrap">
+      <svg viewBox="0 0 160 160" aria-hidden="true"><circle class="ring" cx="80" cy="80" r="72"></circle></svg>
+      <span class="monogram">CB</span>
+    </div>
+    <p class="caps eyebrow">Phoenixville, Pensilvania</p>
+    <h1><span class="ph">Casa Brillante</span></h1>
+    <p class="lead">Limpieza de casas y oficinas, hecha con calma y con cuidado.</p>
+    <a class="btn solid enter" href="#presupuesto" id="enterBtn">Pedir presupuesto gratis</a>
+    <a class="skip" href="#inicio" id="skip">Ver el sitio</a>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="inicio">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="ph">Casa Brillante</span></a>
+    <div class="links caps">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#precios">Precios</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#preguntas">Preguntas</a>
+    </div>
+    <a class="btn solid" href="#presupuesto">Presupuesto</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO, CENTRED ═══ -->
+<header class="hero">
+  <div class="in wrap">
+    <p class="caps" style="color:var(--brass-2)">Limpieza residencial y de oficinas</p>
+    <h1>Usted llega a una casa<br>que ya está lista.</h1>
+    <span class="rule"></span>
+    <p class="lead">Servicio de limpieza en Phoenixville y los pueblos de alrededor. Puntual, discreto y siempre la misma persona en su casa, para que no tenga que explicar nada dos veces.</p>
+    <div class="cta">
+      <a class="btn solid" href="#presupuesto">Pedir presupuesto gratis</a>
+      <a class="btn" href="#servicios">Ver servicios</a>
+    </div>
+    <div class="trust">
+      <span><i class="dot"></i> <span class="ph">00</span> años de experiencia</span>
+      <span><i class="dot"></i> Productos seguros para niños y mascotas</span>
+      <span><i class="dot"></i> Presupuesto sin compromiso</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ SERVICIOS ═══ -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="narrow rv">
+      <p class="caps" style="color:var(--brass-2)">Servicios</p>
+      <h2>Lo que hacemos</h2>
+      <span class="rule"></span>
+      <p class="lead">Cada casa es distinta. Dígame qué necesita y armamos el servicio alrededor de eso, no al revés.</p>
+    </div>
+    <div class="grid g3" id="svcgrid"></div>
+  </div>
+</section>
+
+<!-- ═══ POR QUÉ ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="narrow rv">
+      <p class="caps">Por qué</p>
+      <h2>Lo que puede esperar</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="grid g4">
+      <div class="card rv"><h3>La misma persona</h3><p>No mandamos un equipo distinto cada semana. Usted conoce quién entra a su casa.</p></div>
+      <div class="card rv"><h3>Hora acordada</h3><p>Si quedamos a las nueve, llegamos a las nueve. Si algo pasa, le avisamos antes, no después.</p></div>
+      <div class="card rv"><h3>Productos suaves</h3><p>Sin olores fuertes. Seguros para niños, para mascotas y para quien tenga alergias.</p></div>
+      <div class="card rv"><h3>Su casa, sus reglas</h3><p>Zapatos fuera, cuartos que no se tocan, el perro en el patio. Usted dice cómo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESO ═══ -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="narrow rv">
+      <p class="caps" style="color:var(--brass-2)">Cómo trabajamos</p>
+      <h2>Tres pasos y ya</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="grid g3">
+      <div class="step rv"><span class="n">1</span><div><h3>Hablamos</h3><p>Me cuenta cuántos cuartos y baños tiene y con qué frecuencia lo quiere. Por teléfono o por mensaje, como prefiera.</p></div></div>
+      <div class="step rv"><span class="n">2</span><div><h3>Le doy el precio</h3><p>Un precio cerrado antes de empezar. Nada de sorpresas al final ni cargos que aparecen después.</p></div></div>
+      <div class="step rv"><span class="n">3</span><div><h3>Limpiamos</h3><p>Llegamos el día acordado. Si algo no quedó como usted quería, me dice y lo arreglo sin cobrar de más.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRECIOS ═══ -->
+<section id="precios" style="background:var(--linen-2)">
+  <div class="wrap">
+    <div class="narrow rv">
+      <p class="caps" style="color:var(--brass-2)">Precios</p>
+      <h2>Precios claros</h2>
+      <span class="rule"></span>
+      <p class="lead">Los precios de abajo son para una casa normal de tres recámaras y dos baños. Casas más grandes o primera limpieza profunda se cotizan aparte.</p>
+    </div>
+    <div class="grid g3" id="pricegrid"></div>
+    <p class="narrow formnote rv" style="margin-top:1.6rem">Los precios mostrados son de referencia. El precio final siempre se confirma antes de empezar.</p>
+  </div>
+</section>
+
+<!-- ═══ ZONAS ═══ -->
+<section id="zonas">
+  <div class="wrap narrow rv">
+    <p class="caps" style="color:var(--brass-2)">Zonas</p>
+    <h2>Dónde trabajamos</h2>
+    <span class="rule"></span>
+    <p class="lead">Con base en Phoenixville, PA 19460. También vamos a los pueblos de alrededor; si el suyo no está en la lista, pregunte igual.</p>
+    <div class="towns" id="towns"></div>
+  </div>
+</section>
+
+<!-- ═══ PREGUNTAS ═══ -->
+<section id="preguntas" style="background:var(--linen-2)">
+  <div class="wrap" style="max-width:820px">
+    <div class="narrow rv" style="width:auto">
+      <p class="caps" style="color:var(--brass-2)">Preguntas</p>
+      <h2>Preguntas frecuentes</h2>
+      <span class="rule"></span>
+    </div>
+    <div style="margin-top:2.4rem">
+      <details class="rv"><summary>¿Tengo que estar en la casa?</summary><p>No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.</p></details>
+      <details class="rv"><summary>¿Ustedes traen los productos?</summary><p>Sí, traemos todo. Si usted prefiere que usemos algo en particular que ya tiene en casa, lo usamos sin problema.</p></details>
+      <details class="rv"><summary>¿Qué pasa si algo se rompe?</summary><p><span class="ph">Confirmar si tiene seguro de responsabilidad civil</span>. Si algo se daña, se lo decimos el mismo día y lo resolvemos.</p></details>
+      <details class="rv"><summary>¿Cada cuánto conviene limpiar?</summary><p>La mayoría de las casas cada dos semanas. Si hay niños chicos o mascotas, cada semana funciona mejor. Una vez al mes también se puede, pero la limpieza toma más tiempo.</p></details>
+      <details class="rv"><summary>¿Cómo se paga?</summary><p><span class="ph">Confirmar formas de pago</span> &mdash; efectivo, Zelle, Venmo o cheque. Se paga el mismo día del servicio.</p></details>
+      <details class="rv"><summary>¿Hablan inglés?</summary><p><span class="ph">Confirmar</span>. Se puede coordinar todo por mensaje de texto si le resulta más cómodo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRESUPUESTO ═══ -->
+<section id="presupuesto" class="band">
+  <div class="wrap" style="max-width:760px">
+    <div class="narrow rv" style="width:auto">
+      <p class="caps">Presupuesto</p>
+      <h2>Pida su presupuesto</h2>
+      <span class="rule"></span>
+      <p class="lead">Déjeme sus datos y le respondo el mismo día. Sin compromiso y sin costo.</p>
+    </div>
+    <form id="quote" novalidate>
+      <div class="row2">
+        <div><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" required></div>
+        <div><label for="tel">Teléfono</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="row2">
+        <div><label for="pueblo">Pueblo</label><input id="pueblo" name="pueblo" placeholder="Phoenixville" autocomplete="address-level2"></div>
+        <div><label for="tipo">Tipo de limpieza</label><select id="tipo" name="tipo"></select></div>
+      </div>
+      <div class="row2">
+        <div><label for="cuartos">Recámaras</label><select id="cuartos" name="cuartos"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5 o más</option></select></div>
+        <div><label for="banos">Baños</label><select id="banos" name="banos"><option>1</option><option selected>2</option><option>3</option><option>4 o más</option></select></div>
+      </div>
+      <div><label for="mensaje">¿Algo que deba saber?</label><textarea id="mensaje" name="mensaje" placeholder="Mascotas, alergias, cuartos que no se tocan, horarios..."></textarea></div>
+      <button class="btn light" type="submit" style="justify-self:start">Enviar</button>
+      <p class="formnote" style="color:rgba(246,242,234,.6)">O llame directo al <span class="ph">(000) 000-0000</span>.</p>
+      <p class="sent" id="sent" aria-live="polite" style="color:var(--sage)"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <p class="brand"><span class="ph">Casa Brillante</span></p>
+      <p style="margin-top:.4rem">Limpieza residencial y de oficinas<br>Phoenixville, PA 19460</p>
+    </div>
+    <div>
+      <p class="caps" style="color:var(--sage)">Contacto</p>
+      <p style="margin-top:.6rem"><span class="ph">(000) 000-0000</span><br><span class="ph">correo@ejemplo.com</span></p>
+    </div>
+    <div>
+      <p class="caps" style="color:var(--sage)">Horario</p>
+      <p style="margin-top:.6rem"><span class="ph">Lunes a viernes, 8am a 5pm</span></p>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid rgba(246,242,234,.14);font-size:.84rem">
+    <span class="ph">Casa Brillante</span> · Phoenixville, Pensilvania
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════════════════════════════════════════════════════
+   EVERY PRICE AND EVERY SERVICE COMES FROM HERE. Same rule as paws-united: "Pricing lives in ONE
+   RATES object; services, FAQ and the rate card all render from it. Never hardcode a price in
+   markup." When she gives her real numbers, this object is the only thing that changes.
+   ════════════════════════════════════════════════════════════════════════════════════════════ */
+const RATES = {
+  servicios: [
+    {k:"regular",  n:"Limpieza regular",   d:"El mantenimiento de cada semana o cada dos semanas. Cocina, baños, pisos, polvo y basura.",
+     items:["Cocina completa y electrodomésticos por fuera","Baños desinfectados","Pisos aspirados y trapeados","Polvo en todas las superficies","Camas tendidas y basura afuera"],
+     precio:"$000"},
+    {k:"profunda", n:"Limpieza profunda",  d:"La primera vez, o cuando hace falta ponerse al día. Toma más tiempo y llega a donde no se llega siempre.",
+     items:["Todo lo de la limpieza regular","Dentro del horno y del refrigerador","Zócalos, marcos y puertas","Azulejos y juntas del baño","Ventanas por dentro"],
+     precio:"$000"},
+    {k:"mudanza",  n:"Mudanza",            d:"Para entregar o recibir una casa vacía. Se limpia todo, gabinetes y closets por dentro.",
+     items:["Casa vacía, de arriba a abajo","Gabinetes y closets por dentro","Dentro de todos los electrodomésticos","Garaje barrido","Lista para entregar llaves"],
+     precio:"$000"},
+    {k:"airbnb",   n:"Airbnb y rentas",    d:"Entre huésped y huésped, con cambio de ropa de cama y reposición de lo básico.",
+     items:["Cambio de sábanas y toallas","Reposición de papel y jabón","Fotos al terminar si las necesita","Horarios de salida y entrada","Aviso si algo está dañado"],
+     precio:"$000"},
+    {k:"oficina",  n:"Oficinas",           d:"Oficinas chicas y consultorios, después de hora o el fin de semana.",
+     items:["Escritorios y áreas comunes","Baños y cocineta","Pisos y vidrios","Basura y reciclaje","Después de hora o sábados"],
+     precio:"$000"},
+    {k:"extra",    n:"Trabajos extra",     d:"Cosas sueltas que se agregan a cualquier servicio.",
+     items:["Ventanas por fuera","Lavandería y planchado","Organizar closets","Refrigerador o congelador","Sótano o ático"],
+     precio:"Según el trabajo"}
+  ],
+  /* The three shown on the price cards. Keys must exist in `servicios` above. */
+  tarjetasPrecio: ["regular","profunda","mudanza"],
+  pueblos: ["Phoenixville","Collegeville","Royersford","Spring City","Malvern","Chesterbrook",
+            "King of Prussia","Audubon","Oaks","Limerick","Trappe","Valley Forge"]
+};
+
+/* services */
+document.getElementById("svcgrid").innerHTML = RATES.servicios.map((s,i)=>`
+  <article class="card rv">
+    <span class="num">${String(i+1).padStart(2,"0")}</span>
+    <h3>${s.n}</h3>
+    <p>${s.d}</p>
+    <ul>${s.items.map(x=>`<li>${x}</li>`).join("")}</ul>
+  </article>`).join("");
+
+/* price cards - the price string is wrapped in .ph whenever it is still a placeholder, so an
+   un-filled number is impossible to mistake for a real one */
+const money = v => /^\$0+$/.test(v) ? `<span class="ph">${v}</span>` : v;
+document.getElementById("pricegrid").innerHTML = RATES.tarjetasPrecio.map(k=>{
+  const s = RATES.servicios.find(x=>x.k===k);
+  return `<article class="card rv">
+    <h3>${s.n}</h3>
+    <p>${s.d}</p>
+    <p class="price">${money(s.precio)}</p>
+  </article>`;
+}).join("");
+
+/* towns */
+document.getElementById("towns").innerHTML =
+  RATES.pueblos.map(t=>`<span>${t}</span>`).join("") + `<span class="ph">Confirmar lista</span>`;
+
+/* the form's service list is built from the same object, so it can never drift from the page */
+document.getElementById("tipo").innerHTML =
+  RATES.servicios.map(s=>`<option value="${s.k}">${s.n}</option>`).join("");
+
+/* ═══ SPLASH. Shutters open, body unlocks. ?nosplash=1 skips it, which is how screenshots and
+   any automated check get past it - the same escape hatch the Venetian build has. ═══ */
+const splash = document.getElementById("splash");
+function leave(go){
+  if(splash.classList.contains("leaving")) return;
+  splash.classList.add("leaving");
+  document.body.classList.remove("locked");
+  setTimeout(()=>splash.classList.add("gone"),1150);
+  if(go) setTimeout(()=>document.querySelector(go)?.scrollIntoView({behavior:"smooth"}),260);
+}
+if(new URLSearchParams(location.search).has("nosplash")){
+  splash.classList.add("gone"); document.body.classList.remove("locked");
+}else{
+  document.getElementById("skip").addEventListener("click",e=>{e.preventDefault();leave("#inicio")});
+  document.getElementById("enterBtn").addEventListener("click",e=>{e.preventDefault();leave("#presupuesto")});
+  /* dust motes, seeded so every load is the same and a screenshot diff means something */
+  let seed=20261010;
+  const rnd=()=>{seed=(seed*1103515245+12345)&0x7fffffff;return seed/0x7fffffff};
+  for(let i=0;i<16;i++){
+    const m=document.createElement("i");m.className="mote";
+    const s=2+rnd()*4;
+    m.style.cssText=`width:${s}px;height:${s}px;left:${rnd()*100}%;top:${100+rnd()*40}%;opacity:${.25+rnd()*.4};animation-duration:${16+rnd()*18}s;animation-delay:${-rnd()*20}s`;
+    splash.appendChild(m);
+  }
+}
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{rootMargin:"0px 0px -10% 0px"});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+/* ═══ THE FORM IS A MAILTO UNTIL THERE IS AN ADDRESS TO SEND TO. Deliberately not a Web3Forms key:
+   I have told Matt before that a key delivered to a client inbox when it was bound to his own, and
+   "success:true" proves only that the API accepted the POST, never where the mail landed. A mailto
+   opens her own mail client, which is visible and verifiable. Swap it when the address is real. ═══ */
+document.getElementById("quote").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f=e.target, g=id=>f.querySelector("#"+id).value.trim();
+  if(!g("nombre")||!g("tel")){
+    document.getElementById("sent").textContent="Por favor ponga su nombre y su teléfono.";
+    return;
+  }
+  const tipo=f.querySelector("#tipo");
+  const cuerpo=[
+    `Nombre: ${g("nombre")}`,`Teléfono: ${g("tel")}`,`Pueblo: ${g("pueblo")||"-"}`,
+    `Servicio: ${tipo.options[tipo.selectedIndex].text}`,
+    `Recámaras: ${g("cuartos")}`,`Baños: ${g("banos")}`,``,g("mensaje")||""
+  ].join("\n");
+  location.href="mailto:correo@ejemplo.com?subject="+encodeURIComponent("Presupuesto de limpieza")+"&body="+encodeURIComponent(cuerpo);
+  document.getElementById("sent").textContent="Gracias. Se abrió su correo con los datos; solo presione enviar.";
+});
+</script>
+</body>
+</html>
