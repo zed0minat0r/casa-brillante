@@ -41,7 +41,7 @@
   --ink:#15150F; --ink-2:#56564C; --faint:#8A8578;
   --clay:#C2491D; --clay-2:#9C3714;
   --line:rgba(21,21,15,.12); --line-2:rgba(21,21,15,.22);
-  --ph-bg:#3B3310; --ph-ink:#F3DE92;
+  --ph-tint:rgba(194,73,29,.09); --ph-rule:rgba(194,73,29,.42);
   --display:"Instrument Serif",Georgia,serif;
   --body:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
   --tap:52px;
@@ -68,9 +68,20 @@ img{display:block;max-width:100%;height:auto}
 .mid{width:min(760px,calc(100% - 2.6rem));margin-inline:auto}
 .caps{font-family:var(--body);font-weight:600;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}
 .lead{font-size:1.1rem;line-height:1.62;color:var(--ink-2)}
-/* NOT nowrap: a sentence-length placeholder would run straight off a 390px screen. The short
-   ones (a phone number, an email) have no space to break at anyway. */
-.ph{background:var(--ph-bg);color:var(--ph-ink);padding:.05em .34em;border-radius:3px;font-weight:600;font-size:.92em;font-family:var(--body);letter-spacing:0;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* PLACEHOLDERS SIT INSIDE THE PALETTE. They were olive-on-yellow, which read as a highlighter
+   dropped on the page - "weird and awkward". A terracotta tint with a rule under it still says
+   "not filled in yet" without fighting the design.
+   NOT nowrap: a sentence-length placeholder would run straight off a 390px screen. */
+.ph{background:var(--ph-tint);color:var(--clay);padding:.05em .3em;border-radius:2px;font-weight:500;
+  font-size:.95em;font-family:var(--body);letter-spacing:0;
+  box-shadow:inset 0 -1px 0 var(--ph-rule);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* a tinted box inside a solid button is a box inside a box - let it just be the label */
+.btn .ph{background:none;box-shadow:none;padding:0;color:inherit;font:inherit;letter-spacing:inherit;white-space:nowrap}
+@media(max-width:639px){.nav .btn{padding:0 1rem;font-size:.68rem;letter-spacing:.1em}}
+/* and the headline price is type, not a chip */
+.out .n .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(194,73,29,.4)}
+/* on the two dark grounds the terracotta has to lift off near-black */
+.ondark .ph,footer .ph{background:rgba(232,144,106,.14);color:#EFA585;box-shadow:inset 0 -1px 0 rgba(232,144,106,.4)}
 section{padding:6rem 0;position:relative}
 .hr{height:1px;background:var(--line);border:0;margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);padding:0 1.8rem;font-family:var(--body);font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;border-radius:2px;cursor:pointer;transition:background .22s,color .22s}
@@ -400,7 +411,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 </section>
 
 <!-- ═══ PULL QUOTE ═══ -->
-<section style="background:var(--ink);color:var(--paper);padding:5rem 0">
+<section class="ondark" style="background:var(--ink);color:var(--paper);padding:5rem 0">
   <div class="mid rv">
     <p class="pull">“Llegué a la casa y hasta <i>olía distinto</i>. No sabía que se podía dejar así.”</p>
     <p class="attrib"><span class="ph">Reseña pendiente</span></p>
