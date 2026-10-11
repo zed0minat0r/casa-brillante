@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noymi House Cleaning Service · Limpieza de casas en Phoenixville, PA</title>
-<meta name="description" content="Limpieza de casas y oficinas en Phoenixville, Pensilvania. Siempre la misma persona, precio cerrado antes de empezar. Presupuesto gratis.">
+<title>Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA</title>
+<meta name="description" content="Limpieza de casas y oficinas en King of Prussia, Pensilvania, y 30 millas a la redonda. Precio cerrado antes de empezar. Presupuesto gratis.">
 <meta name="theme-color" content="#FBF9F5">
-<meta property="og:title" content="Noymi House Cleaning Service · Phoenixville, PA">
-<meta property="og:description" content="Limpieza de casas y oficinas en Phoenixville y alrededores. Siempre la misma persona, precio cerrado antes de empezar.">
+<meta property="og:title" content="Noymi House Cleaning Service · King of Prussia, PA">
+<meta property="og:description" content="Limpieza de casas y oficinas en King of Prussia y 30 millas a la redonda. Precio cerrado antes de empezar.">
 <meta property="og:image" content="https://zed0minat0r.github.io/casa-brillante/img/sala.jpg?h=db12689a">
 <meta property="og:url" content="https://zed0minat0r.github.io/casa-brillante/">
 <meta property="og:type" content="website">
@@ -17,11 +17,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HouseKeepingService","name":"Noymi House Cleaning Service","areaServed":{"@type":"City","name":"Phoenixville","addressRegion":"PA"},"address":{"@type":"PostalAddress","addressLocality":"Phoenixville","addressRegion":"PA","postalCode":"19460","addressCountry":"US"},"url":"https://zed0minat0r.github.io/casa-brillante/","image":"https://zed0minat0r.github.io/casa-brillante/img/sala.jpg?h=db12689a","availableLanguage":["es"],"priceRange":"$$"}
+{"@context":"https://schema.org","@type":"HouseKeepingService","name":"Noymi House Cleaning Service","areaServed":{"@type":"GeoCircle","geoMidpoint":{"@type":"GeoCoordinates","address":"King of Prussia, PA"},"geoRadius":"48280"},"address":{"@type":"PostalAddress","addressLocality":"King of Prussia","addressRegion":"PA","postalCode":"19406","addressCountry":"US"},"url":"https://zed0minat0r.github.io/casa-brillante/","image":"https://zed0minat0r.github.io/casa-brillante/img/sala.jpg?h=db12689a","availableLanguage":["es"],"priceRange":"$$"}
 </script>
 <style>
 /* ════════════════════════════════════════════════════════════════════════════════════════════
-   NOYMI HOUSE CLEANING SERVICE · Phoenixville, PA
+   NOYMI HOUSE CLEANING SERVICE · King of Prussia, PA
 
    DIRECTION A, which Matt picked off three mockups - "Go with A but it's still too basic."
    He was right: what he saw was a hero and nothing underneath it. The things that make an
@@ -209,6 +209,9 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 /* four word-labels will not sit in one row on a 390px phone - "Quincenal" clips. Two up. */
 @media(max-width:639px){#segFrec{display:grid;grid-template-columns:1fr 1fr}}
+.extras{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1.1rem;text-align:left}
+.extras p{font-size:.86rem;color:var(--ink-2)}
+.extras b{font-weight:600;color:var(--ink)}
 .out{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1.4rem;text-align:center}
 .out .n{font-family:var(--display);font-size:clamp(2.6rem,7vw,3.6rem);line-height:1;display:block}
 .out .u{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);display:block;margin-top:.5rem}
@@ -225,13 +228,28 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 .room li{margin:.3rem 0}
 
 /* ── HER STORY: drop cap, margin label, big outline watermark behind ── */
-.story{position:relative;overflow:hidden;background:var(--paper-2)}
-.story .mark-bg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:clamp(9rem,26vw,22rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(21,21,15,.08);white-space:nowrap;pointer-events:none;user-select:none}
+.story{position:relative;overflow:hidden;background:var(--ink);color:var(--paper)}
+.story .lead{color:rgba(251,249,245,.76)}
+.story .sidelabel{color:#E8906A}
+.story .mark-bg{position:absolute;left:50%;bottom:-7%;transform:translateX(-50%);font-family:var(--display);
+  font-size:clamp(5.5rem,23vw,15rem);line-height:1;color:transparent;
+  -webkit-text-stroke:1px rgba(251,249,245,.2);white-space:nowrap;pointer-events:none;user-select:none}
 .story .grid{position:relative;width:min(640px,calc(100% - 2.6rem));margin:0 auto;text-align:center}
-.portrait{aspect-ratio:4/5;width:min(300px,70%);margin:0 auto 2.2rem;background:repeating-linear-gradient(135deg,#E8E2D6 0 18px,#E2DBCC 18px 36px);border:1px solid var(--line);border-radius:3px;display:grid;place-items:center;text-align:center;padding:1.5rem}
-.portrait span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+/* the frame is an offset terracotta rule, so the portrait reads as placed rather than pasted */
+.portrait{position:relative;aspect-ratio:4/5;width:min(300px,72%);margin:0 auto 2.6rem;
+  background:repeating-linear-gradient(135deg,#2A2A20 0 18px,#24241B 18px 36px);
+  border-radius:3px;display:grid;place-items:center;text-align:center;padding:1.5rem}
+.portrait::after{content:"";position:absolute;inset:-14px -14px 14px 14px;border:1px solid var(--clay);border-radius:3px;pointer-events:none}
+.portrait span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,249,245,.5);position:relative;z-index:1}
 .story p+p{margin-top:1.1rem}
-.dropcap::first-letter{font-family:var(--display);float:left;font-size:3.9rem;line-height:.84;padding:.1rem .5rem 0 0;color:var(--clay)}
+.dropcap::first-letter{font-family:var(--display);float:left;font-size:3.9rem;line-height:.84;padding:.1rem .5rem 0 0;color:#E8906A}
+/* three facts as display figures - the thing the eye lands on after the portrait */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.6rem;
+  border-top:1px solid rgba(251,249,245,.18);padding-top:1.8rem}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,7vw,2.5rem);line-height:1;color:var(--paper)}
+.facts b .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(232,144,106,.55)}
+.facts span{display:block;margin-top:.5rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,249,245,.5);line-height:1.5}
+@media(max-width:439px){.facts{gap:.5rem}}
 .sidelabel{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:1rem}
 
 /* ── GALLERY, asymmetric on purpose ── */
@@ -286,7 +304,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   <div class="bg" aria-hidden="true"></div><div class="scrim" aria-hidden="true"></div>
   <div class="sh t" aria-hidden="true"></div><div class="sh b" aria-hidden="true"></div>
   <div class="sin">
-    <p class="caps">Phoenixville, Pensilvania</p>
+    <p class="caps">King of Prussia, Pensilvania</p>
     <h1 class="wm">Noymi <i>House Cleaning</i></h1>
     <span class="rule-draw" aria-hidden="true"></span>
     <p class="sub lead">Su casa, como debe estar.</p>
@@ -312,7 +330,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   <div class="wrap">
     <p class="caps kick">Limpieza residencial y de oficinas</p>
     <h1>Su casa, como<br><i>debe estar.</i></h1>
-    <p class="lead">Limpieza en Phoenixville y los pueblos de alrededor. Siempre la misma persona en su casa, y el precio cerrado antes de empezar.</p>
+    <p class="lead">Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.</p>
     <div class="cta">
       <a class="btn clay" href="#presupuesto">Pedir presupuesto</a>
       <a class="btn" href="#precios">Calcular mi precio</a>
@@ -381,6 +399,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
           <label>Cada cuánto</label>
           <div class="seg" id="segFrec"></div>
         </div>
+        <div class="extras" id="extras"></div>
         <div class="out">
           <span class="n" id="precio">—</span>
           <span class="u" id="precioU">por visita</span>
@@ -403,15 +422,21 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     <div class="portrait rv"><span>Foto de Noymi<br>pendiente</span></div>
     <div class="rv">
       <p class="sidelabel">IV · Quién limpia su casa</p>
-      <h2>No es una agencia.<br><i>Soy yo.</i></h2>
-      <p class="lead dropcap" style="margin-top:1.6rem">Me llamo <span class="ph">Noymi</span> y llevo <span class="ph">00</span> años limpiando casas en el área de Phoenixville. Cuando usted me contrata, soy yo la que llega a su puerta, no un equipo distinto cada semana que hay que volver a entrenar.</p>
+      <h2>Un equipo pequeño.<br><i>Un mismo estándar.</i></h2>
+      <p class="lead dropcap" style="margin-top:1.6rem">Me llamo <span class="ph">Noymi</span> y llevo <span class="ph">00</span> años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.</p>
+      <p class="lead">Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.</p>
       <p class="lead"><span class="ph">Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.</span></p>
+      <div class="facts">
+        <div><b><span class="ph">00</span></b><span>Años limpiando</span></div>
+        <div><b>30</b><span>Millas a la redonda</span></div>
+        <div><b><span class="ph">00</span></b><span>Casas cada semana</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ PULL QUOTE ═══ -->
-<section class="ondark" style="background:var(--ink);color:var(--paper);padding:5rem 0">
+<section style="background:var(--paper-2);padding:5rem 0">
   <div class="mid rv">
     <p class="pull">“Llegué a la casa y hasta <i>olía distinto</i>. No sabía que se podía dejar así.”</p>
     <p class="attrib"><span class="ph">Reseña pendiente</span></p>
@@ -425,6 +450,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     <div class="head rv"><span class="no">V</span><h2>Preguntas</h2></div>
     <div>
       <details class="rv"><summary>¿Tengo que estar en la casa?</summary><p>No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.</p></details>
+      <details class="rv"><summary>¿Siempre va la misma persona?</summary><p>No siempre. Somos un equipo pequeño y la persona puede cambiar. Lo que no cambia es la lista de trabajo: guardamos una ficha de su casa para que quien llegue ya sepa cómo se limpia.</p></details>
       <details class="rv"><summary>¿Usted trae los productos?</summary><p>Sí, traigo todo. Si prefiere que use algo que ya tiene en casa, lo uso sin problema.</p></details>
       <details class="rv"><summary>¿Cómo se paga?</summary><p><span class="ph">Confirmar formas de pago</span> — efectivo, Zelle, Venmo o cheque, el mismo día del servicio.</p></details>
       <details class="rv"><summary>¿Habla inglés?</summary><p><span class="ph">Confirmar</span>. Se puede coordinar todo por mensaje de texto si le resulta más cómodo.</p></details>
@@ -443,7 +469,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
         <div><label for="tel">Teléfono</label><input id="tel" type="tel" autocomplete="tel" required></div>
       </div>
       <div class="two">
-        <div><label for="pueblo">Pueblo</label><input id="pueblo" placeholder="Phoenixville" autocomplete="address-level2"></div>
+        <div><label for="pueblo">Pueblo</label><input id="pueblo" placeholder="King of Prussia" autocomplete="address-level2"></div>
         <div><label for="tipo">Tipo de limpieza</label><select id="tipo"></select></div>
       </div>
       <div><label for="mensaje">¿Algo que deba saber?</label><textarea id="mensaje" placeholder="Mascotas, alergias, cuartos que no se tocan, horarios…"></textarea></div>
@@ -458,7 +484,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   <div class="wrap cols">
     <div>
       <p class="mark" style="font-family:var(--display)">Noymi <i style="color:var(--clay)">House Cleaning</i></p>
-      <p style="margin-top:.5rem">Limpieza residencial y de oficinas<br>Phoenixville, PA 19460</p>
+      <p style="margin-top:.5rem">Limpieza residencial y de oficinas<br>King of Prussia, PA 19406<br>30 millas a la redonda</p>
     </div>
     <div><span class="caps">Contacto</span><p><span class="ph">(000) 000-0000</span><br><span class="ph">correo@ejemplo.com</span></p></div>
     <div><span class="caps">Horario</span><p><span class="ph">Lunes a viernes, 8am–5pm</span></p></div>
@@ -468,7 +494,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     <p id="pueblosPie" style="max-width:620px;margin-inline:auto;line-height:1.9"></p>
   </div>
   <div class="wrap" style="margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(251,249,245,.16);font-size:.82rem">
-    Noymi House Cleaning Service · Phoenixville, Pensilvania
+    Noymi House Cleaning Service · King of Prussia, Pensilvania
   </div>
 </footer>
 
@@ -494,18 +520,24 @@ const DATA = {
     {k:"mudanza", n:"Mudanza (entrada o salida)"},{k:"airbnb",n:"Airbnb o renta corta"},
     {k:"oficina", n:"Oficina o consultorio"}
   ],
+  /* charged on top of the visit - she asked for this to be explicit */
+  extras:[{n:"Tender las camas", nota:"Se cobra aparte de la limpieza regular."}],
   cuartosDetalle:[
     {n:"Cocina", t:"Todo lo que se toca a diario", img:"cocina.jpg?h=71118dff",
      items:["Mesones y fregadero","Estufa y campana por fuera","Microondas por dentro y por fuera","Frente de gabinetes","Piso barrido y trapeado","Basura afuera"]},
     {n:"Baños", t:"Lo que de verdad importa", img:"bano.jpg?h=78290901",
      items:["Inodoro completo, también atrás","Regadera y mampara","Azulejo y juntas","Espejos sin marcas","Lavabo y grifería","Piso desinfectado"]},
     {n:"Recámaras", t:"Orden, no sólo limpieza", img:"recamara.jpg?h=ed644046",
-     items:["Camas tendidas","Polvo en muebles y repisas","Debajo de la cama","Marcos y rodapiés","Espejos y vidrios","Aspirado completo"]},
+     items:["Polvo en muebles y repisas","Debajo de la cama","Marcos y rodapiés","Espejos y vidrios","Aspirado completo"]},
     {n:"Sala y comedor", t:"Donde se recibe", img:"sala.jpg?h=db12689a",
      items:["Polvo en todo","Cojines acomodados","Debajo de los muebles","Mesas y superficies","Vidrios de interior","Aspirado y trapeado"]}
   ],
-  pueblos:["Phoenixville","Collegeville","Royersford","Spring City","Malvern","Chesterbrook",
-           "King of Prussia","Audubon","Oaks","Limerick","Trappe","Valley Forge"]
+  /* 30 miles around King of Prussia. Not an exhaustive list - the footer says the radius, this
+     is what a visitor scans for their own town. */
+  pueblos:["King of Prussia","Wayne","Radnor","Bryn Mawr","Ardmore","Narberth","Conshohocken",
+           "Norristown","Plymouth Meeting","Blue Bell","Ambler","Phoenixville","Collegeville",
+           "Malvern","Paoli","Berwyn","Devon","West Chester","Exton","Havertown",
+           "Newtown Square","Media","Villanova","Filadelfia"]
 };
 
 /* ticker - duplicated once so the -50% loop is seamless */
@@ -518,6 +550,9 @@ document.getElementById("rooms").innerHTML = DATA.cuartosDetalle.map(r=>`
     <img src="img/${r.img}" alt="${r.n}" loading="lazy">
     <div class="body"><h3>${r.n}<b>${r.t}</b></h3><ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>
   </div>`).join("");
+
+document.getElementById("extras").innerHTML = DATA.extras.map(e=>
+  `<p><b>${e.n}:</b> ${e.nota}</p>`).join("");
 
 document.getElementById("pueblosPie").textContent = DATA.pueblos.join(" · ");
 
