@@ -11,7 +11,7 @@ comedor.jpg, cocina2.jpg, ventana.jpg.
   cocina.jpg      "Farmhouse Kitchen"                 StockSnap    room card
   bano.jpg        "Modern bathroom interior"          rawpixel     room card
   loza.jpg        "Kitchen Cabinet"                   StockSnap    precios
-  aspirado.jpg    "Free vacuum cleaner wood floor"    rawpixel     preguntas
+  toallas.jpg     "Bath towels"                       rawpixel     preguntas
   escritorio.jpg  "Minimal Office"                    StockSnap    presupuesto
 
 I looked at every one before using it. Five candidates were pulled on sight: a dated red bathroom,
