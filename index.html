@@ -6,7 +6,7 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <title>Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA</title>
 <meta name="description" content="Limpieza de casas y oficinas en King of Prussia, Pensilvania, y 30 millas a la redonda. Precio cerrado antes de empezar. Presupuesto gratis.">
-<meta name="theme-color" content="#FBF9F5">
+<meta name="theme-color" content="#F7FAFE">
 <meta property="og:title" content="Noymi House Cleaning Service · King of Prussia, PA">
 <meta property="og:description" content="Limpieza de casas y oficinas en King of Prussia y 30 millas a la redonda. Precio cerrado antes de empezar.">
 <meta property="og:image" content="https://zed0minat0r.github.io/casa-brillante/img/sala.jpg?h=db12689a">
@@ -38,11 +38,13 @@
    terracotta is the one accent; the photographs carry the colour so the palette can stay quiet.
    ════════════════════════════════════════════════════════════════════════════════════════════ */
 :root{
-  --paper:#FBF9F5; --paper-2:#F3EFE7; --card:#FFFFFF;
-  --ink:#15150F; --ink-2:#56564C; --faint:#8A8578;
-  --clay:#C2491D; --clay-2:#9C3714;
-  --line:rgba(21,21,15,.12); --line-2:rgba(21,21,15,.22);
-  --ph-tint:rgba(194,73,29,.09); --ph-rule:rgba(194,73,29,.42);
+  /* 2026-10-14: her business card's blues - royal blue accent, navy for the dark bands, pale sky paper.
+     Was terracotta / charcoal / cream. */
+  --paper:#F7FAFE; --paper-2:#E6F0FB; --card:#FFFFFF;
+  --ink:#0E2A5C; --ink-2:#4A5B78; --faint:#8494AE;
+  --clay:#1F5FC4; --clay-2:#164A9E;
+  --line:rgba(14,42,92,.12); --line-2:rgba(14,42,92,.22);
+  --ph-tint:rgba(31,95,196,.09); --ph-rule:rgba(31,95,196,.42);
   --display:"Instrument Serif",Georgia,serif;
   --body:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
   --tap:52px;
@@ -54,7 +56,7 @@ body.locked{overflow:hidden}
 /* PAPER. A fibre speckle and a fine grain, both pure CSS - this is the single biggest difference
    between "designed" and "a template with nice fonts", and it costs no request. */
 body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
-  background-image:radial-gradient(rgba(21,21,15,.055) .6px,transparent .6px),radial-gradient(rgba(194,73,29,.04) .5px,transparent .5px);
+  background-image:radial-gradient(rgba(14,42,92,.055) .6px,transparent .6px),radial-gradient(rgba(31,95,196,.04) .5px,transparent .5px);
   background-size:4px 4px,7px 7px;background-position:0 0,2px 3px}
 body>*{position:relative;z-index:2}
 h1,h2,h3{font-family:var(--display);margin:0;font-weight:400;line-height:1.02;letter-spacing:-.022em;text-wrap:balance}
@@ -80,9 +82,9 @@ img{display:block;max-width:100%;height:auto}
 .btn .ph{background:none;box-shadow:none;padding:0;color:inherit;font:inherit;letter-spacing:inherit;white-space:nowrap}
 @media(max-width:639px){.nav .btn{padding:0 1rem;font-size:.68rem;letter-spacing:.1em}}
 /* and the headline price is type, not a chip */
-.out .n .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(194,73,29,.4)}
+.out .n .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(31,95,196,.4)}
 /* on the two dark grounds the terracotta has to lift off near-black */
-.ondark .ph,footer .ph{background:rgba(232,144,106,.14);color:#EFA585;box-shadow:inset 0 -1px 0 rgba(232,144,106,.4)}
+.ondark .ph,footer .ph{background:rgba(140,192,240,.14);color:#A9D0F5;box-shadow:inset 0 -1px 0 rgba(140,192,240,.4)}
 section{padding:6rem 0;position:relative}
 .hr{height:1px;background:var(--line);border:0;margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);padding:0 1.8rem;font-family:var(--body);font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;border-radius:2px;cursor:pointer;transition:background .22s,color .22s}
@@ -108,11 +110,11 @@ section{padding:6rem 0;position:relative}
    PHOTOGRAPH, full bleed, held under a scrim, with the wordmark reversed out white and the image
    drifting very slowly - and it leaves by two shutters sliding apart off the top and bottom,
    which is a reveal rather than a fade. ───────────────────────────────────────────────────── */
-.splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1.5rem;background:#15150F;overflow:hidden}
+.splash{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1.5rem;background:#0E2A5C;overflow:hidden}
 .splash .bg{position:absolute;inset:-4%;background:url("img/sala.jpg?h=db12689a") center/cover no-repeat;animation:drift 15s ease-in-out infinite alternate;z-index:0}
 .splash .scrim{position:absolute;inset:0;z-index:1;
-  background:radial-gradient(60% 46% at 50% 50%,rgba(21,21,15,.55),transparent 72%),
-             linear-gradient(180deg,rgba(21,21,15,.74),rgba(21,21,15,.52) 40%,rgba(21,21,15,.88))}
+  background:radial-gradient(60% 46% at 50% 50%,rgba(14,42,92,.55),transparent 72%),
+             linear-gradient(180deg,rgba(14,42,92,.74),rgba(14,42,92,.52) 40%,rgba(14,42,92,.88))}
 @keyframes drift{from{transform:scale(1.04) translate(0,0)}to{transform:scale(1.11) translate(-1.4%,-1%)}}
 /* the shutters are the paper colour so the site appears to be underneath the photograph */
 .splash .sh{position:absolute;left:0;width:100%;height:50.5%;background:var(--paper);z-index:3;transition:transform 1.05s cubic-bezier(.76,0,.24,1);transform:translateY(0)}
@@ -141,18 +143,18 @@ body.entered .ticker{transition-delay:.60s}
 .splash.out .sin{opacity:0;transform:translateY(-10px);transition:opacity .42s,transform .42s}
 .splash.out .bg,.splash.out .scrim{transition:opacity .5s;opacity:0}
 .sin{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1rem;width:min(760px,100%);color:var(--paper)}
-.sin .caps{color:#E8906A}
-.sin .rule-draw{width:0;height:1px;background:rgba(251,249,245,.55);animation:grow 1.1s .9s cubic-bezier(.65,0,.35,1) forwards}
+.sin .caps{color:#8CC0F0}
+.sin .rule-draw{width:0;height:1px;background:rgba(247,250,254,.55);animation:grow 1.1s .9s cubic-bezier(.65,0,.35,1) forwards}
 @keyframes grow{to{width:170px}}
 .sin .wm{font-family:var(--display);font-size:clamp(2.9rem,10.5vw,5.6rem);line-height:1.02;opacity:0;animation:up .9s .25s both;color:var(--paper)}
-.sin .wm i{color:#E8906A}
-.sin .sub{opacity:0;animation:up .9s 1.25s both;color:rgba(251,249,245,.82)}
+.sin .wm i{color:#8CC0F0}
+.sin .sub{opacity:0;animation:up .9s 1.25s both;color:rgba(247,250,254,.82)}
 .sin .go{opacity:0;animation:up .9s 1.45s both}
-.sin .skip{opacity:0;animation:up .9s 1.62s both;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,249,245,.6);text-decoration:none;border-bottom:1px solid rgba(251,249,245,.3);padding-bottom:3px}
+.sin .skip{opacity:0;animation:up .9s 1.62s both;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,250,254,.6);text-decoration:none;border-bottom:1px solid rgba(247,250,254,.3);padding-bottom:3px}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ── NAV with a persistent phone, which every booking-focused site in the field has ── */
-.nav{position:sticky;top:0;z-index:40;background:rgba(251,249,245,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:40;background:rgba(247,250,254,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:70px}
 .mark{font-family:var(--display);font-size:1.3rem;text-decoration:none;white-space:nowrap;letter-spacing:-.01em}
 .mark i{color:var(--clay)}
@@ -195,9 +197,9 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
    positioned image at identical size, and only the clip rectangle moves - so the two halves
    cannot drift out of register, which is exactly what a width-based wrapper did here. */
 .ba .after{clip-path:inset(0 0 0 50%);will-change:clip-path}
-.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--paper);box-shadow:0 0 0 1px rgba(21,21,15,.18);z-index:3;will-change:left}
-.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:var(--paper);border:1px solid rgba(21,21,15,.1);display:grid;place-items:center;box-shadow:0 3px 20px rgba(21,21,15,.38);font-size:1.05rem;color:var(--ink)}
-.ba .tag{position:absolute;top:1rem;z-index:4;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(21,21,15,.72);color:var(--paper);padding:.4rem .7rem;border-radius:2px}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--paper);box-shadow:0 0 0 1px rgba(14,42,92,.18);z-index:3;will-change:left}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:var(--paper);border:1px solid rgba(14,42,92,.1);display:grid;place-items:center;box-shadow:0 3px 20px rgba(14,42,92,.38);font-size:1.05rem;color:var(--ink)}
+.ba .tag{position:absolute;top:1rem;z-index:4;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(14,42,92,.72);color:var(--paper);padding:.4rem .7rem;border-radius:2px}
 .ba .tag.l{left:1rem}.ba .tag.r{right:1rem}
 
 /* ── PRICE CALCULATOR ── */
@@ -230,30 +232,30 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 
 /* ── HER STORY: drop cap, margin label, big outline watermark behind ── */
 .story{position:relative;overflow:hidden;background:var(--ink);color:var(--paper)}
-.story .lead{color:rgba(251,249,245,.76)}
-.story .sidelabel{color:#E8906A}
+.story .lead{color:rgba(247,250,254,.76)}
+.story .sidelabel{color:#8CC0F0}
 .story .mark-bg{position:absolute;left:50%;bottom:-7%;transform:translateX(-50%);font-family:var(--display);
   font-size:clamp(5.5rem,23vw,15rem);line-height:1;color:transparent;
-  -webkit-text-stroke:1px rgba(251,249,245,.2);white-space:nowrap;pointer-events:none;user-select:none}
+  -webkit-text-stroke:1px rgba(247,250,254,.2);white-space:nowrap;pointer-events:none;user-select:none}
 .story .grid{position:relative;width:min(640px,calc(100% - 2.6rem));margin:0 auto;text-align:center;
   /* room under the facts so the NOYMI outline starts below the labels instead of running through them */
   padding-bottom:clamp(3rem,13vw,9rem)}
 /* the frame is an offset terracotta rule, so the portrait reads as placed rather than pasted */
 .portrait{position:relative;aspect-ratio:4/5;width:min(300px,72%);margin:0 auto 2.6rem;
-  background:repeating-linear-gradient(135deg,#2A2A20 0 18px,#24241B 18px 36px);
+  background:repeating-linear-gradient(135deg,#173A72 0 18px,#12305F 18px 36px);
   border-radius:3px;display:grid;place-items:center;text-align:center;padding:1.5rem}
 .portrait::after{content:"";position:absolute;inset:-14px -14px 14px 14px;border:1px solid var(--clay);border-radius:3px;pointer-events:none}
-.portrait span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,249,245,.5);position:relative;z-index:1}
+.portrait span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,250,254,.5);position:relative;z-index:1}
 .story p+p{margin-top:1.1rem}
-.dropcap::first-letter{font-family:var(--display);float:left;font-size:3.9rem;line-height:.84;padding:.1rem .5rem 0 0;color:#E8906A}
+.dropcap::first-letter{font-family:var(--display);float:left;font-size:3.9rem;line-height:.84;padding:.1rem .5rem 0 0;color:#8CC0F0}
 /* three facts as display figures - the thing the eye lands on after the portrait */
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.6rem;
-  border-top:1px solid rgba(251,249,245,.18);padding-top:1.8rem}
+  border-top:1px solid rgba(247,250,254,.18);padding-top:1.8rem}
 .facts b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,7vw,2.5rem);line-height:1;color:var(--paper)}
-.facts b .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(232,144,106,.55)}
+.facts b .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(140,192,240,.55)}
 /* `> span` only: a bare `.facts span` also caught the .ph inside the 00 placeholders, made it a block
    with a top margin and wide tracking, and dropped those figures below the 30 (2026-10-14 audit) */
-.facts > div > span{display:block;margin-top:.5rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,249,245,.5);line-height:1.5}
+.facts > div > span{display:block;margin-top:.5rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,250,254,.5);line-height:1.5}
 @media(max-width:439px){.facts{gap:.5rem}}
 .sidelabel{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:1rem}
 
@@ -283,12 +285,12 @@ form label{display:block;font-size:.68rem;letter-spacing:.17em;text-transform:up
 .note{font-size:.84rem;color:var(--faint)}
 .sent{color:var(--clay);font-weight:600}
 
-footer{background:var(--ink);color:rgba(251,249,245,.7);padding:4rem 0 2.6rem;font-size:.93rem}
+footer{background:var(--ink);color:rgba(247,250,254,.7);padding:4rem 0 2.6rem;font-size:.93rem}
 footer a{color:#fff}
 footer{text-align:center}
 footer .cols{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
 footer .mark{color:var(--paper);font-size:1.6rem}
-footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
+footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
 
 .rv{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
 .rv.on{opacity:1;transform:none}
@@ -305,11 +307,12 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 .lang{min-height:40px;padding:0 .9rem;border:1px solid var(--line);background:transparent;font:600 .66rem/1 var(--body);
   letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border-radius:2px;cursor:pointer;white-space:nowrap}
 .lang:hover{color:var(--clay);border-color:var(--clay)}
-.splash .lang{position:absolute;top:1.1rem;right:1.1rem;z-index:5;color:rgba(251,249,245,.9);border-color:rgba(251,249,245,.4)}
+.splash .lang{position:absolute;top:1.1rem;right:1.1rem;z-index:5;color:rgba(247,250,254,.9);border-color:rgba(247,250,254,.4)}
 .splash .lang:hover{color:#fff;border-color:#fff}
 /* three things in a 390 nav overflowed by 33px: below 440 the wordmark drops to NOYMI and the phone button tightens */
 @media(max-width:439px){.lang{padding:0 .6rem;letter-spacing:.08em}.nav .mark i{display:none}.nav .btn{padding:0 .75rem;letter-spacing:.06em}.navr{gap:.4rem}}
 .frectip{margin:.7rem 0 0;font-size:.86rem;line-height:1.5;color:var(--ink-2);font-style:italic}
+.story .portrait::after{border-color:#8CC0F0}  /* royal blue on navy all but vanished */
 </style>
 </head>
 <body class="locked">
@@ -337,7 +340,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
       <a href="#servicios">Servicios</a><a href="#antes">Antes y después</a><a href="#precios">Precios</a>
       <a href="#noymi">Quién soy</a><a href="#preguntas">Preguntas</a>
     </div>
-    <div class="navr"><button class="lang" type="button" data-lang-toggle>English</button><a class="btn solid" href="tel:+10000000000"><span class="ph">(000) 000-0000</span></a></div>
+    <div class="navr"><button class="lang" type="button" data-lang-toggle>English</button><a class="btn solid" href="tel:+16108034698">(610) 803-4698</a></div>
   </div>
 </nav>
 
@@ -440,7 +443,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
     <div class="rv">
       <p class="sidelabel">IV · Quién limpia su casa</p>
       <h2>Un equipo pequeño.<br><i>Un mismo estándar.</i></h2>
-      <p class="lead dropcap" style="margin-top:1.6rem">Me llamo <span class="ph">Noymi</span> y llevo <span class="ph">00</span> años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.</p>
+      <p class="lead dropcap" style="margin-top:1.6rem">Me llamo Noymi y llevo <span class="ph">00</span> años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.</p>
       <p class="lead">Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.</p>
       <p class="lead"><span class="ph">Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.</span></p>
       <div class="facts">
@@ -491,7 +494,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
       </div>
       <div><label for="mensaje">¿Algo que deba saber?</label><textarea id="mensaje" placeholder="Mascotas, alergias, cuartos que no se tocan, horarios…"></textarea></div>
       <button class="btn clay" type="submit" style="justify-self:center;min-width:220px">Enviar</button>
-      <p class="note" style="text-align:center">O llame al <span class="ph">(000) 000-0000</span>.</p>
+      <p class="note" style="text-align:center">O llame al <a href="tel:+16108034698">(610) 803-4698</a>.</p>
       <p class="sent" id="sent" aria-live="polite" style="text-align:center"></p>
     </form>
   </div>
@@ -500,17 +503,17 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
 <footer>
   <div class="wrap cols">
     <div>
-      <p class="mark" style="font-family:var(--display)">Noymi <i style="color:var(--clay)">House Cleaning</i></p>
+      <p class="mark" style="font-family:var(--display)">Noymi <i style="color:#8CC0F0">House Cleaning</i></p>
       <p style="margin-top:.5rem">Limpieza residencial y de oficinas<br>King of Prussia, PA 19406<br>30 millas a la redonda</p>
     </div>
-    <div><span class="caps">Contacto</span><p><span class="ph">(000) 000-0000</span><br><span class="ph">correo@ejemplo.com</span></p></div>
+    <div><span class="caps">Contacto</span><p><a href="tel:+16108034698">(610) 803-4698</a><br><a href="mailto:noemimautino16@gmail.com">noemimautino16@gmail.com</a></p></div>
     <div><span class="caps">Horario</span><p><span class="ph">Lunes a viernes, 8am–5pm</span></p></div>
   </div>
   <div class="wrap" style="margin-top:2.4rem">
-    <span class="caps" style="color:rgba(251,249,245,.5);display:block;margin-bottom:.7rem">Zonas que atiendo</span>
+    <span class="caps" style="color:rgba(247,250,254,.5);display:block;margin-bottom:.7rem">Zonas que atiendo</span>
     <p id="pueblosPie" style="max-width:620px;margin-inline:auto;line-height:1.9"></p>
   </div>
-  <div class="wrap" style="margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(251,249,245,.16);font-size:.82rem">
+  <div class="wrap" style="margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(247,250,254,.16);font-size:.82rem">
     Noymi House Cleaning Service · King of Prussia, Pensilvania
   </div>
 </footer>
@@ -669,7 +672,7 @@ document.getElementById("quote").addEventListener("submit",e=>{
   const body=[`Nombre: ${g("nombre")}`,`Teléfono: ${g("tel")}`,`Pueblo: ${g("pueblo")||"-"}`,
     `Servicio: ${t.options[t.selectedIndex].text}`,
     `Casa: ${st.cuartos} recámaras, ${st.banos} baños`,`Frecuencia: ${f.n}`,"",g("mensaje")].join("\n");
-  location.href="mailto:correo@ejemplo.com?subject="+encodeURIComponent("Presupuesto de limpieza")+"&body="+encodeURIComponent(body);
+  location.href="mailto:noemimautino16@gmail.com?subject="+encodeURIComponent("Presupuesto de limpieza")+"&body="+encodeURIComponent(body);
   document.getElementById("sent").textContent="Gracias. Se abrió su correo con los datos; sólo presione enviar.";
 });
 </script>
@@ -678,7 +681,7 @@ document.getElementById("quote").addEventListener("submit",e=>{
    Spanish copy and the DATA object stay the single source. Text the calculator writes later (price notes,
    "por visita") is caught by the MutationObserver. The quote email stays in Spanish - it goes to Noymi. */
 (() => {
-  const EN = {"King of Prussia, Pensilvania": "King of Prussia, Pennsylvania", "Su casa, como debe estar.": "Your home, the way it should be.", "Pedir presupuesto": "Get a quote", "Ver el sitio": "View the site", "Servicios": "Services", "Antes y después": "Before & after", "Precios": "Pricing", "Quién soy": "About me", "Preguntas": "FAQ", "Limpieza residencial y de oficinas": "Residential & office cleaning", "Su casa, como": "Your home, the way", "debe estar.": "it should be.", "Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.": "Cleaning in King of Prussia and within 30 miles. A small team, the same checklist every visit, and a fixed price before we start.", "Calcular mi precio": "Calculate my price", "Foto de referencia · pendiente": "Reference photo · pending", "Filadelfia": "Philadelphia", "Lo que se hace": "What gets done", "en cada cuarto": "in every room", "Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.": "No vague lists. This is exactly what gets cleaned, room by room, in a regular clean.", "Cocina": "Kitchen", "Todo lo que se toca a diario": "Everything you touch every day", "Mesones y fregadero": "Countertops and sink", "Estufa y campana por fuera": "Stove and range hood, outside", "Microondas por dentro y por fuera": "Microwave, inside and out", "Frente de gabinetes": "Cabinet fronts", "Piso barrido y trapeado": "Floor swept and mopped", "Basura afuera": "Trash taken out", "Baños": "Bathrooms", "Lo que de verdad importa": "What really matters", "Inodoro completo, también atrás": "The whole toilet, behind it too", "Regadera y mampara": "Shower and shower door", "Azulejo y juntas": "Tile and grout", "Espejos sin marcas": "Streak-free mirrors", "Lavabo y grifería": "Sink and faucets", "Piso desinfectado": "Floor disinfected", "Recámaras": "Bedrooms", "Polvo en muebles y repisas": "Dusting furniture and shelves", "Debajo de la cama": "Under the bed", "Marcos y rodapiés": "Frames and baseboards", "Espejos y vidrios": "Mirrors and glass", "Aspirado completo": "Full vacuuming", "Sala y comedor": "Living & dining room", "Donde se recibe": "Where you host guests", "Polvo en todo": "Everything dusted", "Cojines acomodados": "Cushions straightened", "Debajo de los muebles": "Under the furniture", "Mesas y superficies": "Tables and surfaces", "Vidrios de interior": "Interior glass", "Aspirado y trapeado": "Vacuumed and mopped", "Antes y": "Before &", "después": "after", "Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.": "Drag the line to see the difference. On a phone, slide with your finger.", "Antes": "Before", "Después": "After", "Ejemplo de demostración sobre la misma fotografía.": "Demo using the same photo.", "Cambiar por un antes y después real": "Replace with a real before & after", "Calcule su precio": "Calculate your price", "Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.": "No call, no email required. Pick the size of your home and how often you want it cleaned.", "Cada cuánto": "How often", "Semanal": "Weekly", "Quincenal": "Every two weeks", "Mensual": "Monthly", "Una sola vez": "One time", "Tender las camas:": "Making the beds:", "Tender las camas": "Making the beds", "Se cobra aparte de la limpieza regular.": "Charged separately from the regular clean.", "falta el precio real de Noymi": "Noymi's real price still needed", "por visita": "per visit", "una sola visita": "one visit", "Pedir este precio": "Request this price", "Qué incluye el precio": "What the price includes", "Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.": "Everything on the list above, room by room. Products and equipment included. No hidden charges at the end.", "El precio por visita baja porque la casa nunca se atrasa.": "The per-visit price drops because the house never falls behind.", "Lo más común, y lo que funciona para la mayoría de las casas.": "The most common choice, and what works for most homes.", "Toma más tiempo: en un mes se junta bastante más.": "Takes longer: a lot more builds up in a month.", "Sin compromiso de volver. Se cotiza como limpieza profunda.": "No commitment to come back. Quoted as a deep clean.", "Confirmar todos los precios con Noymi": "Confirm all prices with Noymi", "· los números de arriba son de referencia.": "· the numbers above are for reference.", "Foto de Noymi": "Photo of Noymi", "pendiente": "pending", "IV · Quién limpia su casa": "IV · Who cleans your home", "Un equipo pequeño.": "A small team.", "Un mismo estándar.": "One standard.", "Me llamo": "My name is", "y llevo": "and I've spent", "años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.": "We keep a file on every home: which floor can't take water, where the dog sleeps, which room nobody touches. Whoever arrives already knows how your home is cleaned, even if she wasn't the one there last time.", "Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.": "The rest of her story goes here: where she's from, why she started, what made her stay in this work.", "Años limpiando": "Years cleaning", "Millas a la redonda": "Mile radius", "Casas cada semana": "Homes every week", "“Llegué a la casa y hasta": "“I got home and it even", "olía distinto": "smelled different", ". No sabía que se podía dejar así.”": ". I didn't know a house could get that clean.”", "Reseña pendiente": "Review pending", "¿Tengo que estar en la casa?": "Do I need to be home?", "No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.": "No need. Many clients leave a key or the door code. If you'd rather be there, that's fine too.", "¿Siempre va la misma persona?": "Is it always the same person?", "No siempre. Somos un equipo pequeño y la persona puede cambiar. Lo que no cambia es la lista de trabajo: guardamos una ficha de su casa para que quien llegue ya sepa cómo se limpia.": "Not always. We're a small team and the person can change. What doesn't change is the checklist: we keep a file on your home so whoever arrives already knows how it's cleaned.", "¿Usted trae los productos?": "Do you bring the supplies?", "¿Cómo se paga?": "How do I pay?", "Confirmar formas de pago": "Confirm payment methods", "— efectivo, Zelle, Venmo o cheque, el mismo día del servicio.": "— cash, Zelle, Venmo or check, on the day of service.", "¿Habla inglés?": "Do you speak English?", "Confirmar": "Confirm", ". Se puede coordinar todo por mensaje de texto si le resulta más cómodo.": ". Everything can be arranged by text message if that's easier for you.", "Pida su presupuesto": "Get your quote", "Le respondo el mismo día. Sin compromiso.": "I reply the same day. No commitment.", "Nombre": "Name", "Teléfono": "Phone", "Pueblo": "Town", "Tipo de limpieza": "Type of cleaning", "Limpieza regular": "Regular cleaning", "Limpieza profunda": "Deep cleaning", "Mudanza (entrada o salida)": "Move-in / move-out", "Airbnb o renta corta": "Airbnb or short-term rental", "Oficina o consultorio": "Office or clinic", "¿Algo que deba saber?": "Anything I should know?", "Enviar": "Send", "O llame al": "Or call", "30 millas a la redonda": "30-mile radius", "Contacto": "Contact", "Horario": "Hours", "Lunes a viernes, 8am–5pm": "Monday to Friday, 8am–5pm", "Zonas que atiendo": "Areas I serve", "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Filadelfia": "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Philadelphia", "Noymi House Cleaning Service · King of Prussia, Pensilvania": "Noymi House Cleaning Service · King of Prussia, Pennsylvania", "Sala limpia y ordenada con luz natural": "Clean, tidy living room in natural light", "La sala antes de limpiar": "The living room before cleaning", "La sala después de limpiar": "The living room after cleaning", "Loza limpia acomodada en una repisa": "Clean dishes arranged on a shelf", "Toallas blancas dobladas": "Folded white towels", "Escritorio ordenado con una planta": "Tidy desk with a plant", "Mascotas, alergias, cuartos que no se tocan, horarios…": "Pets, allergies, rooms not to touch, schedules…", "Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA": "Noymi House Cleaning Service · House cleaning in King of Prussia, PA", "Orden, no solo limpieza": "Tidy, not just clean", "Sí, llevamos todo. Si prefiere que usemos algo que ya tiene en casa, lo usamos sin problema.": "Yes, we bring everything. If you'd rather we use something you already have, no problem."};
+  const EN = {"King of Prussia, Pensilvania": "King of Prussia, Pennsylvania", "Su casa, como debe estar.": "Your home, the way it should be.", "Pedir presupuesto": "Get a quote", "Ver el sitio": "View the site", "Servicios": "Services", "Antes y después": "Before & after", "Precios": "Pricing", "Quién soy": "About me", "Preguntas": "FAQ", "Limpieza residencial y de oficinas": "Residential & office cleaning", "Su casa, como": "Your home, the way", "debe estar.": "it should be.", "Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.": "Cleaning in King of Prussia and within 30 miles. A small team, the same checklist every visit, and a fixed price before we start.", "Calcular mi precio": "Calculate my price", "Foto de referencia · pendiente": "Reference photo · pending", "Filadelfia": "Philadelphia", "Lo que se hace": "What gets done", "en cada cuarto": "in every room", "Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.": "No vague lists. This is exactly what gets cleaned, room by room, in a regular clean.", "Cocina": "Kitchen", "Todo lo que se toca a diario": "Everything you touch every day", "Mesones y fregadero": "Countertops and sink", "Estufa y campana por fuera": "Stove and range hood, outside", "Microondas por dentro y por fuera": "Microwave, inside and out", "Frente de gabinetes": "Cabinet fronts", "Piso barrido y trapeado": "Floor swept and mopped", "Basura afuera": "Trash taken out", "Baños": "Bathrooms", "Lo que de verdad importa": "What really matters", "Inodoro completo, también atrás": "The whole toilet, behind it too", "Regadera y mampara": "Shower and shower door", "Azulejo y juntas": "Tile and grout", "Espejos sin marcas": "Streak-free mirrors", "Lavabo y grifería": "Sink and faucets", "Piso desinfectado": "Floor disinfected", "Recámaras": "Bedrooms", "Polvo en muebles y repisas": "Dusting furniture and shelves", "Debajo de la cama": "Under the bed", "Marcos y rodapiés": "Frames and baseboards", "Espejos y vidrios": "Mirrors and glass", "Aspirado completo": "Full vacuuming", "Sala y comedor": "Living & dining room", "Donde se recibe": "Where you host guests", "Polvo en todo": "Everything dusted", "Cojines acomodados": "Cushions straightened", "Debajo de los muebles": "Under the furniture", "Mesas y superficies": "Tables and surfaces", "Vidrios de interior": "Interior glass", "Aspirado y trapeado": "Vacuumed and mopped", "Antes y": "Before &", "después": "after", "Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.": "Drag the line to see the difference. On a phone, slide with your finger.", "Antes": "Before", "Después": "After", "Ejemplo de demostración sobre la misma fotografía.": "Demo using the same photo.", "Cambiar por un antes y después real": "Replace with a real before & after", "Calcule su precio": "Calculate your price", "Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.": "No call, no email required. Pick the size of your home and how often you want it cleaned.", "Cada cuánto": "How often", "Semanal": "Weekly", "Quincenal": "Every two weeks", "Mensual": "Monthly", "Una sola vez": "One time", "Tender las camas:": "Making the beds:", "Tender las camas": "Making the beds", "Se cobra aparte de la limpieza regular.": "Charged separately from the regular clean.", "falta el precio real de Noymi": "Noymi's real price still needed", "por visita": "per visit", "una sola visita": "one visit", "Pedir este precio": "Request this price", "Qué incluye el precio": "What the price includes", "Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.": "Everything on the list above, room by room. Products and equipment included. No hidden charges at the end.", "El precio por visita baja porque la casa nunca se atrasa.": "The per-visit price drops because the house never falls behind.", "Lo más común, y lo que funciona para la mayoría de las casas.": "The most common choice, and what works for most homes.", "Toma más tiempo: en un mes se junta bastante más.": "Takes longer: a lot more builds up in a month.", "Sin compromiso de volver. Se cotiza como limpieza profunda.": "No commitment to come back. Quoted as a deep clean.", "Confirmar todos los precios con Noymi": "Confirm all prices with Noymi", "· los números de arriba son de referencia.": "· the numbers above are for reference.", "Foto de Noymi": "Photo of Noymi", "pendiente": "pending", "IV · Quién limpia su casa": "IV · Who cleans your home", "Un equipo pequeño.": "A small team.", "Un mismo estándar.": "One standard.", "Me llamo": "My name is", "y llevo": "and I've spent", "años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.": "We keep a file on every home: which floor can't take water, where the dog sleeps, which room nobody touches. Whoever arrives already knows how your home is cleaned, even if she wasn't the one there last time.", "Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.": "The rest of her story goes here: where she's from, why she started, what made her stay in this work.", "Años limpiando": "Years cleaning", "Millas a la redonda": "Mile radius", "Casas cada semana": "Homes every week", "“Llegué a la casa y hasta": "“I got home and it even", "olía distinto": "smelled different", ". No sabía que se podía dejar así.”": ". I didn't know a house could get that clean.”", "Reseña pendiente": "Review pending", "¿Tengo que estar en la casa?": "Do I need to be home?", "No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.": "No need. Many clients leave a key or the door code. If you'd rather be there, that's fine too.", "¿Siempre va la misma persona?": "Is it always the same person?", "No siempre. Somos un equipo pequeño y la persona puede cambiar. Lo que no cambia es la lista de trabajo: guardamos una ficha de su casa para que quien llegue ya sepa cómo se limpia.": "Not always. We're a small team and the person can change. What doesn't change is the checklist: we keep a file on your home so whoever arrives already knows how it's cleaned.", "¿Usted trae los productos?": "Do you bring the supplies?", "¿Cómo se paga?": "How do I pay?", "Confirmar formas de pago": "Confirm payment methods", "— efectivo, Zelle, Venmo o cheque, el mismo día del servicio.": "— cash, Zelle, Venmo or check, on the day of service.", "¿Habla inglés?": "Do you speak English?", "Confirmar": "Confirm", ". Se puede coordinar todo por mensaje de texto si le resulta más cómodo.": ". Everything can be arranged by text message if that's easier for you.", "Pida su presupuesto": "Get your quote", "Le respondo el mismo día. Sin compromiso.": "I reply the same day. No commitment.", "Nombre": "Name", "Teléfono": "Phone", "Pueblo": "Town", "Tipo de limpieza": "Type of cleaning", "Limpieza regular": "Regular cleaning", "Limpieza profunda": "Deep cleaning", "Mudanza (entrada o salida)": "Move-in / move-out", "Airbnb o renta corta": "Airbnb or short-term rental", "Oficina o consultorio": "Office or clinic", "¿Algo que deba saber?": "Anything I should know?", "Enviar": "Send", "O llame al": "Or call", "30 millas a la redonda": "30-mile radius", "Contacto": "Contact", "Horario": "Hours", "Lunes a viernes, 8am–5pm": "Monday to Friday, 8am–5pm", "Zonas que atiendo": "Areas I serve", "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Filadelfia": "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Philadelphia", "Noymi House Cleaning Service · King of Prussia, Pensilvania": "Noymi House Cleaning Service · King of Prussia, Pennsylvania", "Sala limpia y ordenada con luz natural": "Clean, tidy living room in natural light", "La sala antes de limpiar": "The living room before cleaning", "La sala después de limpiar": "The living room after cleaning", "Loza limpia acomodada en una repisa": "Clean dishes arranged on a shelf", "Toallas blancas dobladas": "Folded white towels", "Escritorio ordenado con una planta": "Tidy desk with a plant", "Mascotas, alergias, cuartos que no se tocan, horarios…": "Pets, allergies, rooms not to touch, schedules…", "Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA": "Noymi House Cleaning Service · House cleaning in King of Prussia, PA", "Orden, no solo limpieza": "Tidy, not just clean", "Sí, llevamos todo. Si prefiere que usemos algo que ya tiene en casa, lo usamos sin problema.": "Yes, we bring everything. If you'd rather we use something you already have, no problem.", "Me llamo Noymi y llevo": "My name is Noymi and I've spent"};
   const ATTRS = ["placeholder", "alt", "aria-label", "title"];
   const origText = new WeakMap(), origAttr = new WeakMap();
   const norm = s => s.replace(/\s+/g, " ").trim();
