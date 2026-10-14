@@ -234,7 +234,9 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 .story .mark-bg{position:absolute;left:50%;bottom:-7%;transform:translateX(-50%);font-family:var(--display);
   font-size:clamp(5.5rem,23vw,15rem);line-height:1;color:transparent;
   -webkit-text-stroke:1px rgba(251,249,245,.2);white-space:nowrap;pointer-events:none;user-select:none}
-.story .grid{position:relative;width:min(640px,calc(100% - 2.6rem));margin:0 auto;text-align:center}
+.story .grid{position:relative;width:min(640px,calc(100% - 2.6rem));margin:0 auto;text-align:center;
+  /* room under the facts so the NOYMI outline starts below the labels instead of running through them */
+  padding-bottom:clamp(3rem,13vw,9rem)}
 /* the frame is an offset terracotta rule, so the portrait reads as placed rather than pasted */
 .portrait{position:relative;aspect-ratio:4/5;width:min(300px,72%);margin:0 auto 2.6rem;
   background:repeating-linear-gradient(135deg,#2A2A20 0 18px,#24241B 18px 36px);
@@ -248,7 +250,9 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
   border-top:1px solid rgba(251,249,245,.18);padding-top:1.8rem}
 .facts b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,7vw,2.5rem);line-height:1;color:var(--paper)}
 .facts b .ph{background:none;box-shadow:none;padding:0;font:inherit;color:rgba(232,144,106,.55)}
-.facts span{display:block;margin-top:.5rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,249,245,.5);line-height:1.5}
+/* `> span` only: a bare `.facts span` also caught the .ph inside the 00 placeholders, made it a block
+   with a top margin and wide tracking, and dropped those figures below the 30 (2026-10-14 audit) */
+.facts > div > span{display:block;margin-top:.5rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,249,245,.5);line-height:1.5}
 @media(max-width:439px){.facts{gap:.5rem}}
 .sidelabel{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:1rem}
 
