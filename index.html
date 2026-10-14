@@ -300,12 +300,22 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
   .sin>*,.sin .rule-draw{animation:none!important;opacity:1;width:170px}
 }
 @media(max-width:759px){section{padding:3.8rem 0}}
+/* ── ES / EN SWITCH (Matt 2026-10-14: "a button ... to translate everything to English at the very top") ── */
+.navr{display:flex;align-items:center;gap:.6rem}
+.lang{min-height:40px;padding:0 .9rem;border:1px solid var(--line);background:transparent;font:600 .66rem/1 var(--body);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border-radius:2px;cursor:pointer;white-space:nowrap}
+.lang:hover{color:var(--clay);border-color:var(--clay)}
+.splash .lang{position:absolute;top:1.1rem;right:1.1rem;z-index:5;color:rgba(251,249,245,.9);border-color:rgba(251,249,245,.4)}
+.splash .lang:hover{color:#fff;border-color:#fff}
+/* three things in a 390 nav overflowed by 33px: below 440 the wordmark drops to NOYMI and the phone button tightens */
+@media(max-width:439px){.lang{padding:0 .6rem;letter-spacing:.08em}.nav .mark i{display:none}.nav .btn{padding:0 .75rem;letter-spacing:.06em}.navr{gap:.4rem}}
 </style>
 </head>
 <body class="locked">
 
 <!-- ═══ SPLASH ═══ -->
 <div class="splash" id="splash">
+  <button class="lang" type="button" data-lang-toggle>English</button>
   <div class="bg" aria-hidden="true"></div><div class="scrim" aria-hidden="true"></div>
   <div class="sh t" aria-hidden="true"></div><div class="sh b" aria-hidden="true"></div>
   <div class="sin">
@@ -326,7 +336,7 @@ footer .caps{color:rgba(251,249,245,.5);margin-bottom:.7rem;display:block}
       <a href="#servicios">Servicios</a><a href="#antes">Antes y después</a><a href="#precios">Precios</a>
       <a href="#noymi">Quién soy</a><a href="#preguntas">Preguntas</a>
     </div>
-    <a class="btn solid" href="tel:+10000000000"><span class="ph">(000) 000-0000</span></a>
+    <div class="navr"><button class="lang" type="button" data-lang-toggle>English</button><a class="btn solid" href="tel:+10000000000"><span class="ph">(000) 000-0000</span></a></div>
   </div>
 </nav>
 
@@ -660,6 +670,70 @@ document.getElementById("quote").addEventListener("submit",e=>{
   location.href="mailto:correo@ejemplo.com?subject="+encodeURIComponent("Presupuesto de limpieza")+"&body="+encodeURIComponent(body);
   document.getElementById("sent").textContent="Gracias. Se abrió su correo con los datos; sólo presione enviar.";
 });
+</script>
+<script>
+/* ES / EN SWITCH. The page is written in Spanish; English is a lookup table over the rendered text, so the
+   Spanish copy and the DATA object stay the single source. Text the calculator writes later (price notes,
+   "por visita") is caught by the MutationObserver. The quote email stays in Spanish - it goes to Noymi. */
+(() => {
+  const EN = {"King of Prussia, Pensilvania": "King of Prussia, Pennsylvania", "Su casa, como debe estar.": "Your home, the way it should be.", "Pedir presupuesto": "Get a quote", "Ver el sitio": "View the site", "Servicios": "Services", "Antes y después": "Before & after", "Precios": "Pricing", "Quién soy": "About me", "Preguntas": "FAQ", "Limpieza residencial y de oficinas": "Residential & office cleaning", "Su casa, como": "Your home, the way", "debe estar.": "it should be.", "Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.": "Cleaning in King of Prussia and 30 miles around. A small team, the same checklist every visit, and a fixed price before we start.", "Calcular mi precio": "Calculate my price", "Foto de referencia · pendiente": "Reference photo · pending", "Filadelfia": "Philadelphia", "Lo que se hace": "What gets done", "en cada cuarto": "in every room", "Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.": "No vague lists. This is exactly what gets cleaned, room by room, in a regular clean.", "Cocina": "Kitchen", "Todo lo que se toca a diario": "Everything you touch every day", "Mesones y fregadero": "Countertops and sink", "Estufa y campana por fuera": "Stove and range hood, outside", "Microondas por dentro y por fuera": "Microwave, inside and out", "Frente de gabinetes": "Cabinet fronts", "Piso barrido y trapeado": "Floor swept and mopped", "Basura afuera": "Trash taken out", "Baños": "Bathrooms", "Lo que de verdad importa": "What really matters", "Inodoro completo, también atrás": "Whole toilet, behind it too", "Regadera y mampara": "Shower and shower door", "Azulejo y juntas": "Tile and grout", "Espejos sin marcas": "Streak-free mirrors", "Lavabo y grifería": "Sink and faucets", "Piso desinfectado": "Floor disinfected", "Recámaras": "Bedrooms", "Orden, no sólo limpieza": "Tidy, not just clean", "Polvo en muebles y repisas": "Dusting furniture and shelves", "Debajo de la cama": "Under the bed", "Marcos y rodapiés": "Frames and baseboards", "Espejos y vidrios": "Mirrors and glass", "Aspirado completo": "Full vacuuming", "Sala y comedor": "Living & dining room", "Donde se recibe": "Where you host guests", "Polvo en todo": "Dusting everything", "Cojines acomodados": "Cushions straightened", "Debajo de los muebles": "Under the furniture", "Mesas y superficies": "Tables and surfaces", "Vidrios de interior": "Interior glass", "Aspirado y trapeado": "Vacuumed and mopped", "Antes y": "Before &", "después": "after", "Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.": "Drag the line to see the difference. On a phone, slide with your finger.", "Antes": "Before", "Después": "After", "Ejemplo de demostración sobre la misma fotografía.": "Demo example on the same photo.", "Cambiar por un antes y después real": "Replace with a real before & after", "Calcule su precio": "Calculate your price", "Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.": "No call, no email required. Pick the size of your home and how often you want it cleaned.", "Cada cuánto": "How often", "Semanal": "Weekly", "Quincenal": "Every two weeks", "Mensual": "Monthly", "Una sola vez": "One time", "Tender las camas:": "Making the beds:", "Tender las camas": "Making the beds", "Se cobra aparte de la limpieza regular.": "Charged separately from the regular clean.", "falta el precio real de Noymi": "Noymi's real price still needed", "por visita": "per visit", "una sola visita": "one visit", "Pedir este precio": "Request this price", "Qué incluye el precio": "What the price includes", "Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.": "Everything on the list above, room by room. Products and equipment included. No hidden charges at the end.", "El precio por visita baja porque la casa nunca se atrasa.": "The per-visit price drops because the house never falls behind.", "Lo más común, y lo que funciona para la mayoría de las casas.": "The most common choice, and what works for most homes.", "Toma más tiempo: en un mes se junta bastante más.": "Takes longer: a lot more builds up in a month.", "Sin compromiso de volver. Se cotiza como limpieza profunda.": "No commitment to come back. Quoted as a deep clean.", "Confirmar todos los precios con Noymi": "Confirm all prices with Noymi", "· los números de arriba son de referencia.": "· the numbers above are for reference.", "Foto de Noymi": "Photo of Noymi", "pendiente": "pending", "IV · Quién limpia su casa": "IV · Who cleans your home", "Un equipo pequeño.": "A small team.", "Un mismo estándar.": "One standard.", "Me llamo": "My name is", "y llevo": "and I've spent", "años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.": "We keep a file on every home: which floor can't take water, where the dog sleeps, which room nobody touches. Whoever arrives already knows how your home is cleaned, even if she wasn't the one there last time.", "Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.": "The rest of her story goes here: where she's from, why she started, what made her stay in this work.", "Años limpiando": "Years cleaning", "Millas a la redonda": "Mile radius", "Casas cada semana": "Homes every week", "“Llegué a la casa y hasta": "“I got home and it even", "olía distinto": "smelled different", ". No sabía que se podía dejar así.”": ". I didn't know it could look like that.”", "Reseña pendiente": "Review pending", "¿Tengo que estar en la casa?": "Do I need to be home?", "No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.": "No need. Many clients leave a key or the door code. If you'd rather be there, that's fine too.", "¿Siempre va la misma persona?": "Is it always the same person?", "No siempre. Somos un equipo pequeño y la persona puede cambiar. Lo que no cambia es la lista de trabajo: guardamos una ficha de su casa para que quien llegue ya sepa cómo se limpia.": "Not always. We're a small team and the person can change. What doesn't change is the checklist: we keep a file on your home so whoever arrives already knows how it's cleaned.", "¿Usted trae los productos?": "Do you bring the supplies?", "Sí, traigo todo. Si prefiere que use algo que ya tiene en casa, lo uso sin problema.": "Yes, I bring everything. If you'd prefer I use something you already have, no problem.", "¿Cómo se paga?": "How do I pay?", "Confirmar formas de pago": "Confirm payment methods", "— efectivo, Zelle, Venmo o cheque, el mismo día del servicio.": "— cash, Zelle, Venmo or check, on the day of service.", "¿Habla inglés?": "Do you speak English?", "Confirmar": "Confirm", ". Se puede coordinar todo por mensaje de texto si le resulta más cómodo.": ". Everything can be arranged by text message if that's easier for you.", "Pida su presupuesto": "Get your quote", "Le respondo el mismo día. Sin compromiso.": "I reply the same day. No commitment.", "Nombre": "Name", "Teléfono": "Phone", "Pueblo": "Town", "Tipo de limpieza": "Type of cleaning", "Limpieza regular": "Regular cleaning", "Limpieza profunda": "Deep cleaning", "Mudanza (entrada o salida)": "Move-in / move-out", "Airbnb o renta corta": "Airbnb or short-term rental", "Oficina o consultorio": "Office or medical office", "¿Algo que deba saber?": "Anything I should know?", "Enviar": "Send", "O llame al": "Or call", "30 millas a la redonda": "30-mile radius", "Contacto": "Contact", "Horario": "Hours", "Lunes a viernes, 8am–5pm": "Monday to Friday, 8am–5pm", "Zonas que atiendo": "Areas I serve", "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Filadelfia": "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Philadelphia", "Noymi House Cleaning Service · King of Prussia, Pensilvania": "Noymi House Cleaning Service · King of Prussia, Pennsylvania", "Sala limpia y ordenada con luz natural": "Clean, tidy living room in natural light", "La sala antes de limpiar": "The living room before cleaning", "La sala después de limpiar": "The living room after cleaning", "Loza limpia acomodada en una repisa": "Clean dishes arranged on a shelf", "Toallas blancas dobladas": "Folded white towels", "Escritorio ordenado con una planta": "Tidy desk with a plant", "Mascotas, alergias, cuartos que no se tocan, horarios…": "Pets, allergies, rooms not to touch, schedules…", "Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA": "Noymi House Cleaning Service · House cleaning in King of Prussia, PA"};
+  const ATTRS = ["placeholder", "alt", "aria-label", "title"];
+  const origText = new WeakMap(), origAttr = new WeakMap();
+  const norm = s => s.replace(/\s+/g, " ").trim();
+  let lang = "es", busy = false;
+  const doText = n => {
+    const es = origText.has(n) ? origText.get(n) : n.nodeValue;
+    if (lang === "en") {
+      const en = EN[norm(es)]; if (!en) return;
+      origText.set(n, es);
+      const v = es.match(/^\s*/)[0] + en + es.match(/\s*$/)[0];
+      if (n.nodeValue !== v) n.nodeValue = v;
+    } else if (origText.has(n) && n.nodeValue !== origText.get(n)) n.nodeValue = origText.get(n);
+  };
+  const doEl = el => {
+    for (const a of ATTRS) {
+      if (!el.hasAttribute(a)) continue;
+      const store = origAttr.get(el) || {}; const es = a in store ? store[a] : el.getAttribute(a);
+      if (lang === "en") { const en = EN[norm(es)]; if (!en) continue; store[a] = es; origAttr.set(el, store); el.setAttribute(a, en); }
+      else if (a in store) el.setAttribute(a, store[a]);
+    }
+  };
+  const apply = root => {
+    busy = true;
+    if (root.nodeType === 3) { doText(root); busy = false; return; }
+    if (root.nodeType !== 1) { busy = false; return; }
+    doEl(root);
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
+      acceptNode: n => (n.nodeType === 1 && /^(SCRIPT|STYLE|NOSCRIPT)$/.test(n.tagName)) ? 2 : 1 });
+    let n; while ((n = w.nextNode())) n.nodeType === 3 ? doText(n) : doEl(n);
+    busy = false;
+  };
+  const ES_TITLE = document.title;
+  const set = l => {
+    lang = l;
+    document.documentElement.lang = l;
+    document.title = l === "en" ? (EN[norm(ES_TITLE)] || ES_TITLE) : ES_TITLE;
+    apply(document.body);
+    document.querySelectorAll("[data-lang-toggle]").forEach(b => {
+      b.textContent = l === "en" ? "Español" : "English";
+      b.setAttribute("aria-label", l === "en" ? "Ver el sitio en español" : "View the site in English");
+    });
+    try { localStorage.setItem("noymi-lang", l); } catch (e) {}
+  };
+  new MutationObserver(ms => {
+    if (busy || lang === "es") return;
+    for (const m of ms) {
+      if (m.type === "characterData") apply(m.target);
+      else m.addedNodes.forEach(apply);
+    }
+  }).observe(document.body, { subtree: true, childList: true, characterData: true });
+  document.querySelectorAll("[data-lang-toggle]").forEach(b =>
+    b.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); set(lang === "en" ? "es" : "en"); }));
+  let start = "es";
+  try { start = localStorage.getItem("noymi-lang") || "es"; } catch (e) {}
+  const q = new URLSearchParams(location.search).get("lang"); if (q === "en" || q === "es") start = q;
+  if (start === "en") set("en");
+})();
 </script>
 </body>
 </html>
