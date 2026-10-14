@@ -313,6 +313,12 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
 @media(max-width:439px){.lang{padding:0 .6rem;letter-spacing:.08em}.nav .mark i{display:none}.nav .btn{padding:0 .75rem;letter-spacing:.06em}.navr{gap:.4rem}}
 .frectip{margin:.7rem 0 0;font-size:.86rem;line-height:1.5;color:var(--ink-2);font-style:italic}
 .story .portrait::after{border-color:#8CC0F0}  /* royal blue on navy all but vanished */
+.pasos{list-style:none;padding:0;margin:2.4rem auto 0;width:min(980px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.pasos li{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1.8rem 1.6rem;text-align:center}
+.pasos b{display:block;font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;color:var(--clay);margin-bottom:.7rem}
+.pasos h3{font-family:var(--display);font-weight:400;font-size:1.5rem;margin:0 0 .5rem}
+.pasos p{font-size:.93rem;color:var(--ink-2);margin:0}
+@media(max-width:759px){.pasos{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="locked">
@@ -337,7 +343,7 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
   <div class="wrap">
     <a class="mark" href="#inicio">Noymi <i>House Cleaning</i></a>
     <div class="links">
-      <a href="#servicios">Servicios</a><a href="#antes">Antes y después</a><a href="#precios">Precios</a>
+      <a href="#servicios">Servicios</a><a href="#antes">Antes y después</a><a href="#estimado">Estimado gratis</a>
       <a href="#noymi">Quién soy</a><a href="#preguntas">Preguntas</a>
     </div>
     <div class="navr"><button class="lang" type="button" data-lang-toggle>English</button><a class="btn solid" href="tel:+16108034698">(610) 803-4698</a></div>
@@ -352,7 +358,7 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
     <p class="lead">Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.</p>
     <div class="cta">
       <a class="btn clay" href="#presupuesto">Pedir presupuesto</a>
-      <a class="btn" href="#precios">Calcular mi precio</a>
+      <a class="btn" href="#estimado">Estimado gratis</a>
     </div>
     <div class="heroshot">
       <img src="img/sala.jpg?h=db12689a" alt="Sala limpia y ordenada con luz natural" width="1024" height="683">
@@ -395,42 +401,30 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
   </div>
 </section>
 
-<!-- ═══ III · PRECIOS ═══ -->
-<section id="precios">
+<!-- ═══ III · ESTIMADO GRATIS ═══
+     The calculator is gone (2026-10-14): she prices every house in person - a free walk-through, then a
+     fixed price. Her card says "Free Estimates". -->
+<section id="estimado">
   <div class="wrap">
     <img class="secimg tall rv" src="img/loza.jpg?h=f8d74252" alt="Loza limpia acomodada en una repisa" width="733" height="1100" loading="lazy">
     <div class="head rv">
       <span class="no">III</span>
-      <h2>Calcule su precio</h2>
-      <p class="lead">Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.</p>
+      <h2>Estimado <i>gratis</i></h2>
+      <p class="lead">Cada casa es distinta, así que no damos precios a ciegas. Vamos a su casa, la recorremos con usted y le damos un precio cerrado.</p>
     </div>
-    <div class="calc">
-      <div class="panel rv">
-        <div class="field">
-          <label>Recámaras</label>
-          <div class="seg" id="segCuartos"></div>
-        </div>
-        <div class="field">
-          <label>Baños</label>
-          <div class="seg" id="segBanos"></div>
-        </div>
-        <div class="field" style="margin-bottom:0">
-          <label>Cada cuánto</label>
-          <div class="seg" id="segFrec"></div>
-          <p class="frectip" id="frecNota"></p>
-        </div>
-        <div class="extras" id="extras"></div>
-        <div class="out">
-          <span class="n" id="precio">—</span>
-          <span class="u" id="precioU">por visita</span>
-        </div>
-        <a class="btn clay" href="#presupuesto" style="width:100%;margin-top:1.2rem">Pedir este precio</a>
-      </div>
+    <ol class="pasos rv">
+      <li><b>1</b><h3>Llame o escriba</h3><p>Por teléfono, mensaje de texto o el formulario de abajo. Le respondo el mismo día.</p></li>
+      <li><b>2</b><h3>Visita gratis</h3><p>Vamos a su casa y recorremos cada cuarto con usted. Sin costo y sin compromiso.</p></li>
+      <li><b>3</b><h3>Precio cerrado</h3><p>Le damos el precio antes de empezar. Lo que se acuerda es lo que se paga.</p></li>
+    </ol>
+    <div class="rv" style="display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem">
+      <a class="btn clay" href="#presupuesto">Pedir mi visita gratis</a>
+      <a class="btn" href="tel:+16108034698">Llamar (610) 803-4698</a>
     </div>
-    <div class="rv" style="width:min(560px,100%);margin:2.4rem auto 0">
+    <div class="rv" style="width:min(560px,100%);margin:2.6rem auto 0;text-align:center">
       <p class="sidelabel">Qué incluye el precio</p>
-      <p class="lead" id="incluye">Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.</p>
-      <p class="note" style="margin-top:1.4rem"><span class="ph">Confirmar todos los precios con Noymi</span> · los números de arriba son de referencia.</p>
+      <p class="lead">Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.</p>
+      <p class="note" style="margin-top:1rem"><b>Tender las camas</b> se cobra aparte de la limpieza regular.</p>
     </div>
   </div>
 </section>
@@ -574,49 +568,11 @@ document.getElementById("rooms").innerHTML = DATA.cuartosDetalle.map(r=>`
     <div class="body"><h3>${r.n}<b>${r.t}</b></h3><ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>
   </div>`).join("");
 
-document.getElementById("extras").innerHTML = DATA.extras.map(e=>
-  `<p><b>${e.n}:</b> ${e.nota}</p>`).join("");
 
 document.getElementById("pueblosPie").textContent = DATA.pueblos.join(" · ");
 
 /* form services */
 document.getElementById("tipo").innerHTML = DATA.servicios.map(s=>`<option value="${s.k}">${s.n}</option>`).join("");
-
-/* ── CALCULATOR ───────────────────────────────────────────────────────────────────────────────
-   WHILE BASE IS 0 IT SHOWS A PLACEHOLDER, NOT "$0". A zero would read as a real, free price and
-   that is exactly the kind of number that gets screenshotted and sent to a client. */
-const st = {cuartos:3, banos:2, frec:"quincenal"};
-function seg(id, values, key, label){
-  document.getElementById(id).innerHTML = values.map(v=>{
-    const val = typeof v === "object" ? v.k : v;
-    const txt = typeof v === "object" ? v.n : v;
-    return `<button type="button" data-v="${val}" aria-pressed="${st[key]==val}">${txt}</button>`;
-  }).join("");
-  document.getElementById(id).addEventListener("click", e=>{
-    const b = e.target.closest("button"); if(!b) return;
-    st[key] = isNaN(b.dataset.v) ? b.dataset.v : +b.dataset.v;
-    [...b.parentElement.children].forEach(c=>c.setAttribute("aria-pressed", c===b));
-    render();
-  });
-}
-function render(){
-  const f = DATA.frecuencias.find(x=>x.k===st.frec);
-  document.getElementById("frecNota").textContent = f.nota;
-  const el = document.getElementById("precio"), u = document.getElementById("precioU");
-  if(!DATA.BASE){
-    el.innerHTML = `<span class="ph">$000</span>`;
-    u.textContent = "falta el precio real de Noymi";
-    return;
-  }
-  const extra = Math.max(0, st.cuartos-3)*DATA.porCuarto + Math.max(0, st.banos-2)*DATA.porBano;
-  const p = Math.round(((DATA.BASE + extra) * f.m) / 5) * 5;
-  el.textContent = "$" + p;
-  u.textContent = f.k==="unica" ? "una sola visita" : "por visita";
-}
-seg("segCuartos", DATA.cuartos, "cuartos");
-seg("segBanos", DATA.banos, "banos");
-seg("segFrec", DATA.frecuencias, "frec");
-render();
 
 /* ── BEFORE / AFTER WIPE. Pointer events so one code path covers mouse, pen and touch. ── */
 (function(){
@@ -671,11 +627,10 @@ document.getElementById("quote").addEventListener("submit",e=>{
   const g=id=>document.getElementById(id).value.trim();
   if(!g("nombre")||!g("tel")){document.getElementById("sent").textContent="Por favor ponga su nombre y su teléfono.";return}
   const t=document.getElementById("tipo");
-  const f=DATA.frecuencias.find(x=>x.k===st.frec);
   const body=[`Nombre: ${g("nombre")}`,`Teléfono: ${g("tel")}`,`Pueblo: ${g("pueblo")||"-"}`,
     `Servicio: ${t.options[t.selectedIndex].text}`,
-    `Casa: ${st.cuartos} recámaras, ${st.banos} baños`,`Frecuencia: ${f.n}`,"",g("mensaje")].join("\n");
-  location.href="mailto:noemimautino16@gmail.com?subject="+encodeURIComponent("Presupuesto de limpieza")+"&body="+encodeURIComponent(body);
+    "",g("mensaje")].join("\n");
+  location.href="mailto:noemimautino16@gmail.com?subject="+encodeURIComponent("Visita para estimado gratis")+"&body="+encodeURIComponent(body);
   document.getElementById("sent").textContent="Gracias. Se abrió su correo con los datos; sólo presione enviar.";
 });
 </script>
@@ -684,7 +639,7 @@ document.getElementById("quote").addEventListener("submit",e=>{
    Spanish copy and the DATA object stay the single source. Text the calculator writes later (price notes,
    "por visita") is caught by the MutationObserver. The quote email stays in Spanish - it goes to Noymi. */
 (() => {
-  const EN = {"King of Prussia, Pensilvania": "King of Prussia, Pennsylvania", "Su casa, como debe estar.": "Your home, the way it should be.", "Pedir presupuesto": "Get a quote", "Ver el sitio": "View the site", "Servicios": "Services", "Antes y después": "Before & after", "Precios": "Pricing", "Quién soy": "About me", "Preguntas": "FAQ", "Limpieza residencial y de oficinas": "Residential & office cleaning", "Su casa, como": "Your home, the way", "debe estar.": "it should be.", "Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.": "Cleaning in King of Prussia and within 30 miles. A small team, the same checklist every visit, and a fixed price before we start.", "Calcular mi precio": "Calculate my price", "Foto de referencia · pendiente": "Reference photo · pending", "Filadelfia": "Philadelphia", "Lo que se hace": "What gets done", "en cada cuarto": "in every room", "Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.": "No vague lists. This is exactly what gets cleaned, room by room, in a regular clean.", "Cocina": "Kitchen", "Todo lo que se toca a diario": "Everything you touch every day", "Mesones y fregadero": "Countertops and sink", "Estufa y campana por fuera": "Stove and range hood, outside", "Microondas por dentro y por fuera": "Microwave, inside and out", "Frente de gabinetes": "Cabinet fronts", "Piso barrido y trapeado": "Floor swept and mopped", "Basura afuera": "Trash taken out", "Baños": "Bathrooms", "Lo que de verdad importa": "What really matters", "Inodoro completo, también atrás": "The whole toilet, behind it too", "Regadera y mampara": "Shower and shower door", "Azulejo y juntas": "Tile and grout", "Espejos sin marcas": "Streak-free mirrors", "Lavabo y grifería": "Sink and faucets", "Piso desinfectado": "Floor disinfected", "Recámaras": "Bedrooms", "Polvo en muebles y repisas": "Dusting furniture and shelves", "Debajo de la cama": "Under the bed", "Marcos y rodapiés": "Frames and baseboards", "Espejos y vidrios": "Mirrors and glass", "Aspirado completo": "Full vacuuming", "Sala y comedor": "Living & dining room", "Donde se recibe": "Where you host guests", "Polvo en todo": "Everything dusted", "Cojines acomodados": "Cushions straightened", "Debajo de los muebles": "Under the furniture", "Mesas y superficies": "Tables and surfaces", "Vidrios de interior": "Interior glass", "Aspirado y trapeado": "Vacuumed and mopped", "Antes y": "Before &", "después": "after", "Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.": "Drag the line to see the difference. On a phone, slide with your finger.", "Antes": "Before", "Después": "After", "Ejemplo de demostración sobre la misma fotografía.": "Demo using the same photo.", "Cambiar por un antes y después real": "Replace with a real before & after", "Calcule su precio": "Calculate your price", "Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.": "No call, no email required. Pick the size of your home and how often you want it cleaned.", "Cada cuánto": "How often", "Semanal": "Weekly", "Quincenal": "Every two weeks", "Mensual": "Monthly", "Una sola vez": "One time", "Tender las camas:": "Making the beds:", "Tender las camas": "Making the beds", "Se cobra aparte de la limpieza regular.": "Charged separately from the regular clean.", "falta el precio real de Noymi": "Noymi's real price still needed", "por visita": "per visit", "una sola visita": "one visit", "Pedir este precio": "Request this price", "Qué incluye el precio": "What the price includes", "Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.": "Everything on the list above, room by room. Products and equipment included. No hidden charges at the end.", "El precio por visita baja porque la casa nunca se atrasa.": "The per-visit price drops because the house never falls behind.", "Lo más común, y lo que funciona para la mayoría de las casas.": "The most common choice, and what works for most homes.", "Toma más tiempo: en un mes se junta bastante más.": "Takes longer: a lot more builds up in a month.", "Sin compromiso de volver. Se cotiza como limpieza profunda.": "No commitment to come back. Quoted as a deep clean.", "Confirmar todos los precios con Noymi": "Confirm all prices with Noymi", "· los números de arriba son de referencia.": "· the numbers above are for reference.", "Foto de Noymi": "Photo of Noymi", "pendiente": "pending", "IV · Quién limpia su casa": "IV · Who cleans your home", "Un equipo pequeño.": "A small team.", "Un mismo estándar.": "One standard.", "Me llamo": "My name is", "y llevo": "and I've spent", "años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.": "We keep a file on every home: which floor can't take water, where the dog sleeps, which room nobody touches. Whoever arrives already knows how your home is cleaned, even if she wasn't the one there last time.", "Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.": "The rest of her story goes here: where she's from, why she started, what made her stay in this work.", "Años limpiando": "Years cleaning", "Millas a la redonda": "Mile radius", "Casas cada semana": "Homes every week", "“Llegué a la casa y hasta": "“I got home and it even", "olía distinto": "smelled different", ". No sabía que se podía dejar así.”": ". I didn't know a house could get that clean.”", "Reseña pendiente": "Review pending", "¿Tengo que estar en la casa?": "Do I need to be home?", "No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.": "No need. Many clients leave a key or the door code. If you'd rather be there, that's fine too.", "¿Siempre va la misma persona?": "Is it always the same person?", "No siempre. Somos un equipo pequeño y la persona puede cambiar. Lo que no cambia es la lista de trabajo: guardamos una ficha de su casa para que quien llegue ya sepa cómo se limpia.": "Not always. We're a small team and the person can change. What doesn't change is the checklist: we keep a file on your home so whoever arrives already knows how it's cleaned.", "¿Usted trae los productos?": "Do you bring the supplies?", "¿Cómo se paga?": "How do I pay?", "Confirmar formas de pago": "Confirm payment methods", "— efectivo, Zelle, Venmo o cheque, el mismo día del servicio.": "— cash, Zelle, Venmo or check, on the day of service.", "¿Habla inglés?": "Do you speak English?", "Confirmar": "Confirm", ". Se puede coordinar todo por mensaje de texto si le resulta más cómodo.": ". Everything can be arranged by text message if that's easier for you.", "Pida su presupuesto": "Get your quote", "Le respondo el mismo día. Sin compromiso.": "I reply the same day. No commitment.", "Nombre": "Name", "Teléfono": "Phone", "Pueblo": "Town", "Tipo de limpieza": "Type of cleaning", "Limpieza regular": "Regular cleaning", "Limpieza profunda": "Deep cleaning", "Mudanza (entrada o salida)": "Move-in / move-out", "Airbnb o renta corta": "Airbnb or short-term rental", "Oficina o consultorio": "Office or clinic", "¿Algo que deba saber?": "Anything I should know?", "Enviar": "Send", "O llame al": "Or call", "30 millas a la redonda": "30-mile radius", "Contacto": "Contact", "Horario": "Hours", "Lunes a viernes, 8am–5pm": "Monday to Friday, 8am–5pm", "Zonas que atiendo": "Areas I serve", "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Filadelfia": "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Philadelphia", "Noymi House Cleaning Service · King of Prussia, Pensilvania": "Noymi House Cleaning Service · King of Prussia, Pennsylvania", "Sala limpia y ordenada con luz natural": "Clean, tidy living room in natural light", "La sala antes de limpiar": "The living room before cleaning", "La sala después de limpiar": "The living room after cleaning", "Loza limpia acomodada en una repisa": "Clean dishes arranged on a shelf", "Toallas blancas dobladas": "Folded white towels", "Escritorio ordenado con una planta": "Tidy desk with a plant", "Mascotas, alergias, cuartos que no se tocan, horarios…": "Pets, allergies, rooms not to touch, schedules…", "Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA": "Noymi House Cleaning Service · House cleaning in King of Prussia, PA", "Orden, no solo limpieza": "Tidy, not just clean", "Sí, llevamos todo. Si prefiere que usemos algo que ya tiene en casa, lo usamos sin problema.": "Yes, we bring everything. If you'd rather we use something you already have, no problem.", "Me llamo Noymi y llevo": "My name is Noymi and I've spent", "Me llamo Noymi y llevo más de 10 años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "My name is Noymi and I've spent more than 10 years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Lunes a jueves, 8am–7pm": "Monday to Thursday, 8am–7pm", "Viernes, 8am–4pm": "Friday, 8am–4pm", "Domingo, solo con cita": "Sunday, by appointment only", "Limpieza regular (casa, condo o apartamento)": "Regular cleaning (house, condo or apartment)", "Después de remodelación o construcción": "After remodeling or construction", "Después de una fiesta": "After a party"};
+  const EN = {"King of Prussia, Pensilvania": "King of Prussia, Pennsylvania", "Su casa, como debe estar.": "Your home, the way it should be.", "Pedir presupuesto": "Get a quote", "Ver el sitio": "View the site", "Servicios": "Services", "Antes y después": "Before & after", "Precios": "Pricing", "Quién soy": "About me", "Preguntas": "FAQ", "Limpieza residencial y de oficinas": "Residential & office cleaning", "Su casa, como": "Your home, the way", "debe estar.": "it should be.", "Limpieza en King of Prussia y 30 millas a la redonda. Un equipo pequeño, la misma lista de trabajo en cada visita, y el precio cerrado antes de empezar.": "Cleaning in King of Prussia and within 30 miles. A small team, the same checklist every visit, and a fixed price before we start.", "Calcular mi precio": "Calculate my price", "Foto de referencia · pendiente": "Reference photo · pending", "Filadelfia": "Philadelphia", "Lo que se hace": "What gets done", "en cada cuarto": "in every room", "Nada de listas vagas. Esto es exactamente lo que se limpia, cuarto por cuarto, en una limpieza regular.": "No vague lists. This is exactly what gets cleaned, room by room, in a regular clean.", "Cocina": "Kitchen", "Todo lo que se toca a diario": "Everything you touch every day", "Mesones y fregadero": "Countertops and sink", "Estufa y campana por fuera": "Stove and range hood, outside", "Microondas por dentro y por fuera": "Microwave, inside and out", "Frente de gabinetes": "Cabinet fronts", "Piso barrido y trapeado": "Floor swept and mopped", "Basura afuera": "Trash taken out", "Baños": "Bathrooms", "Lo que de verdad importa": "What really matters", "Inodoro completo, también atrás": "The whole toilet, behind it too", "Regadera y mampara": "Shower and shower door", "Azulejo y juntas": "Tile and grout", "Espejos sin marcas": "Streak-free mirrors", "Lavabo y grifería": "Sink and faucets", "Piso desinfectado": "Floor disinfected", "Recámaras": "Bedrooms", "Polvo en muebles y repisas": "Dusting furniture and shelves", "Debajo de la cama": "Under the bed", "Marcos y rodapiés": "Frames and baseboards", "Espejos y vidrios": "Mirrors and glass", "Aspirado completo": "Full vacuuming", "Sala y comedor": "Living & dining room", "Donde se recibe": "Where you host guests", "Polvo en todo": "Everything dusted", "Cojines acomodados": "Cushions straightened", "Debajo de los muebles": "Under the furniture", "Mesas y superficies": "Tables and surfaces", "Vidrios de interior": "Interior glass", "Aspirado y trapeado": "Vacuumed and mopped", "Antes y": "Before &", "después": "after", "Arrastre la línea para ver la diferencia. En el teléfono, deslice con el dedo.": "Drag the line to see the difference. On a phone, slide with your finger.", "Antes": "Before", "Después": "After", "Ejemplo de demostración sobre la misma fotografía.": "Demo using the same photo.", "Cambiar por un antes y después real": "Replace with a real before & after", "Calcule su precio": "Calculate your price", "Sin llamar y sin dejar su correo. Elija el tamaño de su casa y con qué frecuencia la quiere limpia.": "No call, no email required. Pick the size of your home and how often you want it cleaned.", "Cada cuánto": "How often", "Semanal": "Weekly", "Quincenal": "Every two weeks", "Mensual": "Monthly", "Una sola vez": "One time", "Tender las camas:": "Making the beds:", "Tender las camas": "Making the beds", "Se cobra aparte de la limpieza regular.": "Charged separately from the regular clean.", "falta el precio real de Noymi": "Noymi's real price still needed", "por visita": "per visit", "una sola visita": "one visit", "Pedir este precio": "Request this price", "Qué incluye el precio": "What the price includes", "Todo lo de la lista de arriba, cuarto por cuarto. Productos y equipo incluidos. Sin cargos escondidos al final.": "Everything on the list above, room by room. Products and equipment included. No hidden charges at the end.", "El precio por visita baja porque la casa nunca se atrasa.": "The per-visit price drops because the house never falls behind.", "Lo más común, y lo que funciona para la mayoría de las casas.": "The most common choice, and what works for most homes.", "Toma más tiempo: en un mes se junta bastante más.": "Takes longer: a lot more builds up in a month.", "Sin compromiso de volver. Se cotiza como limpieza profunda.": "No commitment to come back. Quoted as a deep clean.", "Confirmar todos los precios con Noymi": "Confirm all prices with Noymi", "· los números de arriba son de referencia.": "· the numbers above are for reference.", "Foto de Noymi": "Photo of Noymi", "pendiente": "pending", "IV · Quién limpia su casa": "IV · Who cleans your home", "Un equipo pequeño.": "A small team.", "Un mismo estándar.": "One standard.", "Me llamo": "My name is", "y llevo": "and I've spent", "años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Guardamos una ficha de cada casa: qué piso no aguanta agua, dónde duerme el perro, cuál es el cuarto que nadie toca. Quien llega ya sabe cómo se limpia la suya, aunque no haya sido ella la vez pasada.": "We keep a file on every home: which floor can't take water, where the dog sleeps, which room nobody touches. Whoever arrives already knows how your home is cleaned, even if she wasn't the one there last time.", "Aquí va el resto de su historia: de dónde es, por qué empezó, qué la hizo quedarse en este trabajo.": "The rest of her story goes here: where she's from, why she started, what made her stay in this work.", "Años limpiando": "Years cleaning", "Millas a la redonda": "Mile radius", "Casas cada semana": "Homes every week", "“Llegué a la casa y hasta": "“I got home and it even", "olía distinto": "smelled different", ". No sabía que se podía dejar así.”": ". I didn't know a house could get that clean.”", "Reseña pendiente": "Review pending", "¿Tengo que estar en la casa?": "Do I need to be home?", "No hace falta. Muchos clientes dejan una llave o el código de la puerta. Si prefiere estar, también está bien.": "No need. Many clients leave a key or the door code. If you'd rather be there, that's fine too.", "¿Siempre va la misma persona?": "Is it always the same person?", "No siempre. Somos un equipo pequeño y la persona puede cambiar. Lo que no cambia es la lista de trabajo: guardamos una ficha de su casa para que quien llegue ya sepa cómo se limpia.": "Not always. We're a small team and the person can change. What doesn't change is the checklist: we keep a file on your home so whoever arrives already knows how it's cleaned.", "¿Usted trae los productos?": "Do you bring the supplies?", "¿Cómo se paga?": "How do I pay?", "Confirmar formas de pago": "Confirm payment methods", "— efectivo, Zelle, Venmo o cheque, el mismo día del servicio.": "— cash, Zelle, Venmo or check, on the day of service.", "¿Habla inglés?": "Do you speak English?", "Confirmar": "Confirm", ". Se puede coordinar todo por mensaje de texto si le resulta más cómodo.": ". Everything can be arranged by text message if that's easier for you.", "Pida su presupuesto": "Get your quote", "Le respondo el mismo día. Sin compromiso.": "I reply the same day. No commitment.", "Nombre": "Name", "Teléfono": "Phone", "Pueblo": "Town", "Tipo de limpieza": "Type of cleaning", "Limpieza regular": "Regular cleaning", "Limpieza profunda": "Deep cleaning", "Mudanza (entrada o salida)": "Move-in / move-out", "Airbnb o renta corta": "Airbnb or short-term rental", "Oficina o consultorio": "Office or clinic", "¿Algo que deba saber?": "Anything I should know?", "Enviar": "Send", "O llame al": "Or call", "30 millas a la redonda": "30-mile radius", "Contacto": "Contact", "Horario": "Hours", "Lunes a viernes, 8am–5pm": "Monday to Friday, 8am–5pm", "Zonas que atiendo": "Areas I serve", "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Filadelfia": "King of Prussia · Wayne · Radnor · Bryn Mawr · Ardmore · Narberth · Conshohocken · Norristown · Plymouth Meeting · Blue Bell · Ambler · Phoenixville · Collegeville · Malvern · Paoli · Berwyn · Devon · West Chester · Exton · Havertown · Newtown Square · Media · Villanova · Philadelphia", "Noymi House Cleaning Service · King of Prussia, Pensilvania": "Noymi House Cleaning Service · King of Prussia, Pennsylvania", "Sala limpia y ordenada con luz natural": "Clean, tidy living room in natural light", "La sala antes de limpiar": "The living room before cleaning", "La sala después de limpiar": "The living room after cleaning", "Loza limpia acomodada en una repisa": "Clean dishes arranged on a shelf", "Toallas blancas dobladas": "Folded white towels", "Escritorio ordenado con una planta": "Tidy desk with a plant", "Mascotas, alergias, cuartos que no se tocan, horarios…": "Pets, allergies, rooms not to touch, schedules…", "Noymi House Cleaning Service · Limpieza de casas en King of Prussia, PA": "Noymi House Cleaning Service · House cleaning in King of Prussia, PA", "Orden, no solo limpieza": "Tidy, not just clean", "Sí, llevamos todo. Si prefiere que usemos algo que ya tiene en casa, lo usamos sin problema.": "Yes, we bring everything. If you'd rather we use something you already have, no problem.", "Me llamo Noymi y llevo": "My name is Noymi and I've spent", "Me llamo Noymi y llevo más de 10 años limpiando casas en el área de King of Prussia. Trabajo con un equipo pequeño, así que no siempre va la misma persona a su casa. Lo que sí va siempre es la misma lista de trabajo.": "My name is Noymi and I've spent more than 10 years cleaning homes in the King of Prussia area. I work with a small team, so it isn't always the same person at your home. What is always the same is the checklist.", "Lunes a jueves, 8am–7pm": "Monday to Thursday, 8am–7pm", "Viernes, 8am–4pm": "Friday, 8am–4pm", "Domingo, solo con cita": "Sunday, by appointment only", "Limpieza regular (casa, condo o apartamento)": "Regular cleaning (house, condo or apartment)", "Después de remodelación o construcción": "After remodeling or construction", "Después de una fiesta": "After a party", "Estimado gratis": "Free estimate", "Estimado": "Free", "gratis": "estimate", "Cada casa es distinta, así que no damos precios a ciegas. Vamos a su casa, la recorremos con usted y le damos un precio cerrado.": "Every home is different, so we don't quote blind. We come to your home, walk through it with you, and give you a fixed price.", "Llame o escriba": "Call or text", "Por teléfono, mensaje de texto o el formulario de abajo. Le respondo el mismo día.": "By phone, text, or the form below. I reply the same day.", "Visita gratis": "Free visit", "Vamos a su casa y recorremos cada cuarto con usted. Sin costo y sin compromiso.": "We come to your home and walk through every room with you. No cost, no commitment.", "Precio cerrado": "Fixed price", "Le damos el precio antes de empezar. Lo que se acuerda es lo que se paga.": "You get the price before we start. What we agree on is what you pay.", "Pedir mi visita gratis": "Book my free visit", "Llamar (610) 803-4698": "Call (610) 803-4698", "se cobra aparte de la limpieza regular.": "is charged separately from the regular clean."};
   const ATTRS = ["placeholder", "alt", "aria-label", "title"];
   const origText = new WeakMap(), origAttr = new WeakMap();
   const norm = s => s.replace(/\s+/g, " ").trim();
