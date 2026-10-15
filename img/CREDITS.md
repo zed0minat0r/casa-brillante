@@ -28,3 +28,7 @@ Re-stamp after changing any image.
   mudanza.jpg  "Empty apartment, real estate"       rawpixel
   obra.jpg     "Painting tools house renovation"    rawpixel
   fiesta.jpg   "Table set for a party"              rawpixel
+2026-10-15 replacements (Matt: "find a better picture for after parties and after construction", and the free estimate):
+  obra.jpg      "Free kitchen interior design image"   rawpixel   (a finished, spotless new kitchen)
+  fiesta.jpg    "Decorated wedding reception table"    rawpixel
+  estimado.jpg  "House Keys"                           rawpixel   (was loza.jpg above Estimado gratis)
