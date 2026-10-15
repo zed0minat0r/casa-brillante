@@ -22,3 +22,9 @@ substitute for looking at what it hands back.
 Every <img> is stamped with ?h=<sha1[:8]> of its own bytes. The ?v=<sha> on the page URL busts the
 HTML only, so a REPLACED image at the same filename would otherwise serve from cache forever.
 Re-stamp after changing any image.
+
+2026-10-14, "Lo que limpiamos" (her card's job types), CC0 via Openverse / rawpixel:
+  oficina.jpg  "Modern office, green workplace"     rawpixel
+  mudanza.jpg  "Empty apartment, real estate"       rawpixel
+  obra.jpg     "Painting tools house renovation"    rawpixel
+  fiesta.jpg   "Table set for a party"              rawpixel
