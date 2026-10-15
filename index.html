@@ -319,9 +319,21 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
 .pasos h3{font-family:var(--display);font-weight:400;font-size:1.5rem;margin:0 0 .5rem}
 .pasos p{font-size:.93rem;color:var(--ink-2);margin:0}
 @media(max-width:759px){.pasos{grid-template-columns:1fr}}
-.rooms{grid-template-columns:repeat(3,1fr)}
 .room img[src^="img/fiesta"]{object-position:50% 12%}  /* keep the bunting - it is what says party */
-@media(max-width:999px){.rooms{grid-template-columns:repeat(2,1fr)}}
+/* WHAT WE CLEAN as a swipeable row that auto-advances every 10s (Matt 2026-10-15). The grid version squeezed
+   six cards 2-3 across on a phone. Cards are NOT .rv: an off-screen card in a sideways track never intersects
+   the viewport observer and would stay invisible. */
+.rooms{display:flex !important;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;padding:.2rem .1rem 1rem}
+.rooms::-webkit-scrollbar{display:none}
+.room{flex:0 0 calc((100% - 2.4rem)/3);scroll-snap-align:start}
+@media(max-width:999px){.room{flex-basis:calc((100% - 1.2rem)/2)}}
+@media(max-width:759px){.room{flex-basis:86%;scroll-snap-align:center}.room img{aspect-ratio:4/3}}
+.room .body{padding:1.2rem 1.2rem 1.4rem}
+.dots{display:flex;justify-content:center;gap:.5rem;margin-top:.6rem}
+.dots button{width:9px;height:9px;padding:0;border-radius:50%;border:0;background:var(--line-2);cursor:pointer;transition:background .3s,transform .3s}
+.dots button[aria-current="true"]{background:var(--clay);transform:scale(1.25)}
+.dots button::before{content:"";display:block;width:32px;height:32px;margin:-11.5px}  /* 32px tap target */
 </style>
 </head>
 <body class="locked">
@@ -382,6 +394,7 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
       <p class="lead">Casas y negocios, en King of Prussia y 30 millas a la redonda. Estos son los trabajos que hacemos.</p>
     </div>
     <div class="rooms" id="rooms"></div>
+    <div class="dots" id="roomDots"></div>
   </div>
 </section>
 
@@ -571,9 +584,9 @@ document.getElementById("run").innerHTML = towns + towns;
 
 /* room-by-room */
 document.getElementById("rooms").innerHTML = DATA.cuartosDetalle.map(r=>`
-  <div class="room rv">
+  <div class="room">
     <img src="img/${r.img}" alt="${r.n}" loading="lazy">
-    <div class="body"><h3>${r.n}<b>${r.t}</b></h3><ul>${r.items.map(i=>`<li>${i}</li>`).join("")}</ul></div>
+    <div class="body"><h3>${r.n}<b>${r.t}</b></h3></div>
   </div>`).join("");
 
 
@@ -581,6 +594,29 @@ document.getElementById("pueblosPie").textContent = DATA.pueblos.join(" · ");
 
 /* form services */
 document.getElementById("tipo").innerHTML = DATA.servicios.map(s=>`<option value="${s.k}">${s.n}</option>`).join("");
+
+/* ── WHAT WE CLEAN: auto-advance every 10s, pause while touched, dots follow the scroll ── */
+(function(){
+  const track=document.getElementById("rooms"), dotsEl=document.getElementById("roomDots");
+  const cards=[...track.children];
+  dotsEl.innerHTML=cards.map((c,i)=>`<button type="button" aria-label="${c.querySelector("h3").firstChild.textContent}"></button>`).join("");
+  const dots=[...dotsEl.children];
+  const idx=()=>{let best=0,d=1e9;cards.forEach((c,i)=>{const x=Math.abs(c.offsetLeft-track.offsetLeft-track.scrollLeft);if(x<d){d=x;best=i}});return best};
+  const go=i=>track.scrollTo({left:cards[i].offsetLeft-track.offsetLeft,behavior:"smooth"});
+  const mark=()=>{const i=idx();dots.forEach((b,k)=>b.setAttribute("aria-current",k===i))};
+  track.addEventListener("scroll",()=>requestAnimationFrame(mark),{passive:true}); mark();
+  dots.forEach((b,i)=>b.addEventListener("click",()=>{hold();go(i)}));
+  let last=0, inView=false;
+  const hold=()=>{last=Date.now()};
+  ["pointerdown","touchstart","wheel","mouseenter"].forEach(e=>track.addEventListener(e,hold,{passive:true}));
+  new IntersectionObserver(es=>{inView=es[0].isIntersecting},{threshold:.3}).observe(track);
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  setInterval(()=>{
+    if(!inView||document.hidden||Date.now()-last<10000) return;
+    const atEnd=track.scrollLeft+track.clientWidth>=track.scrollWidth-4;
+    go(atEnd?0:Math.min(idx()+1,cards.length-1));
+  },10000);
+})();
 
 /* ── BEFORE / AFTER WIPE. Pointer events so one code path covers mouse, pen and touch. ── */
 (function(){
