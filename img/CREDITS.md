@@ -32,3 +32,13 @@ Re-stamp after changing any image.
   obra.jpg      "Free kitchen interior design image"   rawpixel   (a finished, spotless new kitchen)
   fiesta.jpg    "Decorated wedding reception table"    rawpixel
   estimado.jpg  "House Keys"                           rawpixel   (was loza.jpg above Estimado gratis)
+
+2026-10-17, HER OWN PHOTOS (from her Google Business Profile, via Matt) - these replace stock:
+  noymi-sala.jpg    empty living room, wood floor, French doors   GBP, 2400px original   hero, splash, og:image
+  noymi-cocina.jpg  empty kitchen, cherry cabinets                GBP, 2400px original   Mudanzas card
+  noymi-piso.jpg    team member mopping a wood floor              Matt, 348px -> Real-ESRGAN x4   Casas card
+  noymi-estufa.jpg  clean gas stovetop                            Matt, 533px -> Real-ESRGAN x4   Limpieza profunda card
+  noymi-equipo.jpg  team member cleaning a window, Noymi shirt    Matt, 348px -> LANCZOS ONLY     portrait in Quien soy
+The window shot is NOT AI-upscaled on purpose: Real-ESRGAN rewrote the lettering on her shirt into a wrong
+business name and a wrong phone number. Any photo with text on it gets a plain resize.
+Not used: an oven interior that still shows stains (Matt asked for clean pictures only).
