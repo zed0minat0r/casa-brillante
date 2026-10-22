@@ -42,3 +42,8 @@ Re-stamp after changing any image.
 The window shot is NOT AI-upscaled on purpose: Real-ESRGAN rewrote the lettering on her shirt into a wrong
 business name and a wrong phone number. Any photo with text on it gets a plain resize.
 Not used: an oven interior that still shows stains (Matt asked for clean pictures only).
+
+2026-10-22, the "Antes" side of the before/after wipe (Matt: the grayed-out before "doesn't make any sense... we need
+the before side to have trash and stuff"):
+  sala-sucia.jpg  sala.jpg (CC0, rawpixel) edited with FLUX.1 Kontext Dev to add trash, laundry, dirt; then
+                  aligned back onto sala.jpg with SIFT + a similarity transform so the wipe lines up.
