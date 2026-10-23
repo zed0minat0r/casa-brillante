@@ -47,3 +47,8 @@ Not used: an oven interior that still shows stains (Matt asked for clean picture
 the before side to have trash and stuff"):
   sala-sucia.jpg  sala.jpg (CC0, rawpixel) edited with FLUX.1 Kontext Dev to add trash, laundry, dirt; then
                   aligned back onto sala.jpg with SIFT + a similarity transform so the wipe lines up.
+
+2026-10-23 (Matt: "switch out the towel picture above the FAQ"):
+  suministros.jpg  AI-generated with FLUX.1 [schnell] (Apache-2.0 model; outputs free for commercial use, no
+                   attribution). Caddy, spray bottles, microfiber cloths on a marble counter. No text/labels in it.
+                   Openverse and Unsplash were unreachable from here that day.
