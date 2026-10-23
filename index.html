@@ -791,7 +791,7 @@ document.getElementById("quote").addEventListener("submit",async e=>{
       b.textContent = l === "en" ? "Español" : "English";
       b.setAttribute("aria-label", l === "en" ? "Ver el sitio en español" : "View the site in English");
     });
-    try { localStorage.setItem("noymi-lang", l); } catch (e) {}
+    try { localStorage.setItem("noymi-lang2", l); } catch (e) {}
   };
   new MutationObserver(ms => {
     if (busy || lang === "es") return;
@@ -802,8 +802,10 @@ document.getElementById("quote").addEventListener("submit",async e=>{
   }).observe(document.body, { subtree: true, childList: true, characterData: true });
   document.querySelectorAll("[data-lang-toggle]").forEach(b =>
     b.addEventListener("click", e => { e.preventDefault(); e.stopPropagation(); set(lang === "en" ? "es" : "en"); }));
-  let start = "es";
-  try { start = localStorage.getItem("noymi-lang") || "es"; } catch (e) {}
+  // English first (Matt 2026-10-23: "have it start in English and then you have that button to switch"). New storage key
+  // so a visitor's old saved "es" from the Spanish-first site doesn't keep them in Spanish.
+  let start = "en";
+  try { start = localStorage.getItem("noymi-lang2") || "en"; } catch (e) {}
   const q = new URLSearchParams(location.search).get("lang"); if (q === "en" || q === "es") start = q;
   if (start === "en") set("en");
 })();
