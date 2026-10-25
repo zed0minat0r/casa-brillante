@@ -290,7 +290,7 @@ details.faq{border:1px solid var(--line);border-bottom:1px solid var(--line);bac
 details.faq::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--clay);transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 details.faq[open]{box-shadow:0 14px 34px -18px rgba(14,42,92,.35);border-color:rgba(31,95,196,.35)}
 details.faq[open]::before{transform:scaleY(1)}
-details.faq summary{justify-content:flex-start;text-align:left;gap:.9rem;padding:1.15rem 1.1rem 1.15rem 1.3rem;font-size:1.12rem;min-height:var(--tap)}
+details.faq summary{justify-content:flex-start;text-align:left;gap:.9rem;padding:1.15rem 1.1rem 1.15rem 1.3rem;font-family:var(--body);font-weight:600;font-size:1.02rem;letter-spacing:-.005em;color:var(--ink);min-height:var(--tap)}
 details.faq summary::after,details.faq[open] summary::after{content:none !important}
 details.faq .fn{font-family:var(--body);font-size:.68rem;font-weight:600;letter-spacing:.14em;color:var(--clay);opacity:.7;flex:none}
 details.faq .fq{flex:1;line-height:1.3}
@@ -304,9 +304,9 @@ details.faq[open] .fx::after{transform:translate(-50%,-50%) rotate(0deg)}
 details.faq summary:hover .fx{border-color:var(--clay)}
 details.faq .ans{overflow:hidden}
 details.faq .ans-in{padding:0 1.3rem 1.3rem 3.4rem;text-align:left}
-details.faq .ans p{margin:0 0 .6rem;text-align:left;color:var(--ink-2);font-size:.97rem}
+details.faq .ans p{margin:0 0 .6rem;text-align:left;color:var(--ink);font-size:.97rem;font-weight:500;line-height:1.55}
 details.faq .ans ul{margin:.2rem 0 0;padding:0;list-style:none;display:grid;gap:.45rem}
-details.faq .ans li{position:relative;padding-left:1.5rem;font-size:.94rem;color:var(--ink-2)}
+details.faq .ans li{position:relative;padding-left:1.5rem;font-size:.95rem;line-height:1.5;color:var(--ink);opacity:.86}
 details.faq .ans li::before{content:"";position:absolute;left:0;top:.48em;width:.8rem;height:.45rem;border-left:2px solid var(--clay);border-bottom:2px solid var(--clay);transform:rotate(-45deg)}
 details.faq .ans .note{margin-top:.7rem}
 @media(max-width:759px){details.faq .ans-in{padding-left:1.3rem}}
