@@ -180,6 +180,29 @@ section ul,section ol,.story p:not(.sidelabel),.room ul{text-align:left}
 .heroshot img{width:100%;height:clamp(300px,52vh,560px);object-fit:cover;border-radius:3px}
 .heroshot .cap{display:block;margin-top:.85rem;text-align:center;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);line-height:1.5}
 
+/* ── AMBIENT (Matt 2026-10-25: "bring it to life more"). Kept quiet on purpose: a slow drift on the hero photo with
+   a window-light glint, a handful of soap bubbles rising behind the hero, and a shine across the primary buttons. ── */
+.hero{position:relative;overflow:hidden}
+.hero>.wrap{position:relative;z-index:1}
+.heroshot{overflow:hidden;border-radius:3px}
+.heroshot img{display:block;animation:hdrift 26s ease-in-out infinite alternate;transform-origin:60% 40%}
+@keyframes hdrift{from{transform:scale(1.02)}to{transform:scale(1.09) translate(-1.2%,-.8%)}}
+.heroshot::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.22) 45%,rgba(255,255,255,.32) 50%,rgba(255,255,255,.22) 55%,transparent);
+  animation:glint 11s 2s ease-in-out infinite}
+@keyframes glint{0%{left:-60%}38%,100%{left:130%}}
+.bubbles{position:absolute;left:0;right:0;top:0;height:92vh;overflow:hidden;pointer-events:none;z-index:0}
+.bubbles i{position:absolute;bottom:-50px;border-radius:50%;opacity:0;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0 9%,transparent 12%),
+             radial-gradient(circle at 50% 50%,transparent 54%,rgba(140,192,240,.5) 68%,rgba(255,190,225,.4) 82%,rgba(31,95,196,.32) 100%);
+  box-shadow:inset 0 0 6px rgba(255,255,255,.6);animation:rise linear infinite}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}12%{opacity:.85}50%{transform:translate(var(--sway),-46vh)}85%{opacity:.75}100%{transform:translate(0,-96vh);opacity:0}}
+.btn.clay{position:relative;overflow:hidden}
+.btn.clay::after{content:"";position:absolute;top:0;bottom:0;left:-80%;width:50%;transform:skewX(-20deg);pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);animation:bshine 6.5s 1.5s ease-in-out infinite}
+@keyframes bshine{0%{left:-80%}30%,100%{left:140%}}
+@media(prefers-reduced-motion:reduce){.heroshot img,.heroshot::after,.btn.clay::after{animation:none}.bubbles{display:none}}
+
 /* ── TICKER of the towns ── */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:.95rem 0;margin-top:3.4rem;background:var(--paper-2)}
 .ticker .run{display:flex;gap:2.6rem;white-space:nowrap;width:max-content;animation:slide 46s linear infinite;font-family:var(--display);font-size:1.22rem;color:var(--ink-2)}
@@ -383,9 +406,9 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
 .story .portrait::after{border-color:#8CC0F0}  /* royal blue on navy all but vanished */
 .pasos{list-style:none;padding:0;margin:2.4rem auto 0;width:min(980px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .pasos li{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1.8rem 1.6rem;text-align:center}
-.pasos b{display:block;font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;color:var(--clay);margin-bottom:.7rem}
-.pasos h3{font-family:var(--display);font-weight:400;font-size:1.5rem;margin:0 0 .5rem}
-.pasos p{font-size:.93rem;color:var(--ink-2);margin:0}
+.pasos b{display:grid;place-items:center;width:44px;height:44px;margin:0 auto .9rem;border-radius:50%;background:rgba(31,95,196,.1);font-family:var(--body);font-weight:600;font-size:1.05rem;line-height:1;color:var(--clay)}
+.pasos h3{font-family:var(--body);font-weight:600;font-size:1.08rem;letter-spacing:-.005em;line-height:1.3;color:var(--ink);margin:0 0 .5rem}
+.pasos p{font-size:.95rem;font-weight:500;line-height:1.55;color:var(--ink);margin:0}
 @media(max-width:759px){.pasos{grid-template-columns:1fr}}
 /* WHAT WE CLEAN as a swipeable row that auto-advances every 10s (Matt 2026-10-15). The grid version squeezed
    six cards 2-3 across on a phone. Cards are NOT .rv: an off-screen card in a sideways track never intersects
@@ -437,6 +460,7 @@ footer .caps{color:rgba(247,250,254,.5);margin-bottom:.7rem;display:block}
 
 <!-- ═══ HERO ═══ -->
 <header class="hero">
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
   <div class="wrap">
     <p class="caps kick">Limpieza residencial y comercial</p>
     <h1>Su casa, como<br><i>debe estar.</i></h1>
@@ -903,6 +927,14 @@ document.getElementById("quote").addEventListener("submit",async e=>{
   const q = new URLSearchParams(location.search).get("lang"); if (q === "en" || q === "es") start = q;
   if (start === "en") set("en");
 })();
+</script>
+<script>
+/* soap bubbles behind the hero: few, slow, staggered so they never arrive in a clump */
+(()=>{ const box=document.getElementById("bubbles"); if(!box||matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const n=innerWidth<640?6:10;
+  for(let k=0;k<n;k++){ const b=document.createElement("i"), d=14+Math.random()*30;
+    b.style.cssText=`width:${d}px;height:${d}px;left:${4+Math.random()*92}%;--sway:${(Math.random()*60-30).toFixed(0)}px;animation-duration:${(16+Math.random()*12).toFixed(1)}s;animation-delay:${(k*2.3+Math.random()*2).toFixed(1)}s`;
+    box.appendChild(b); } })();
 </script>
 </body>
 </html>
