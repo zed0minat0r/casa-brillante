@@ -5,26 +5,48 @@
  "outputDirectory": ".",
  "redirects": [
   {
-   "source": "/:path*",
+   "source": "/",
    "has": [
     {
      "type": "host",
      "value": "www.noymihousecleaning.com"
     }
    ],
-   "destination": "https://noymihousecleaning.com/:path*",
-   "permanent": true
+   "destination": "https://noymihousecleaning.com/",
+   "statusCode": 301
   },
   {
-   "source": "/:path*",
+   "source": "/:path+",
+   "has": [
+    {
+     "type": "host",
+     "value": "www.noymihousecleaning.com"
+    }
+   ],
+   "destination": "https://noymihousecleaning.com/:path+",
+   "statusCode": 301
+  },
+  {
+   "source": "/",
    "has": [
     {
      "type": "host",
      "value": "noymi-cleaning.vercel.app"
     }
    ],
-   "destination": "https://noymihousecleaning.com/:path*",
-   "permanent": true
+   "destination": "https://noymihousecleaning.com/",
+   "statusCode": 301
+  },
+  {
+   "source": "/:path+",
+   "has": [
+    {
+     "type": "host",
+     "value": "noymi-cleaning.vercel.app"
+    }
+   ],
+   "destination": "https://noymihousecleaning.com/:path+",
+   "statusCode": 301
   }
  ]
 }
