@@ -1,1 +1,30 @@
-{ "framework": null, "buildCommand": "", "installCommand": "", "outputDirectory": "." }
+{
+ "framework": null,
+ "buildCommand": "",
+ "installCommand": "",
+ "outputDirectory": ".",
+ "redirects": [
+  {
+   "source": "/:path*",
+   "has": [
+    {
+     "type": "host",
+     "value": "www.noymihousecleaning.com"
+    }
+   ],
+   "destination": "https://noymihousecleaning.com/:path*",
+   "permanent": true
+  },
+  {
+   "source": "/:path*",
+   "has": [
+    {
+     "type": "host",
+     "value": "noymi-cleaning.vercel.app"
+    }
+   ],
+   "destination": "https://noymihousecleaning.com/:path*",
+   "permanent": true
+  }
+ ]
+}
